@@ -1,4 +1,5 @@
 # zuitop
 Zuitop Official Website
 
-hi
+ai link:
+https://we.tl/t-gE2DC0Lkkh
