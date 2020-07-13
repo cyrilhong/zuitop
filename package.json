@@ -1,36 +1,44 @@
 {
-  "name": "gulp-starter",
+  "name": "minimal-gulp-sass-pug-starter",
   "version": "1.0.0",
-  "description": "starter kit for gulp",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A blank-sheet playground starter kit based on Sass and Pug.",
   "repository": {
     "type": "git",
-    "url": "http://github.com/dope/gulp-starter.git"
+    "url": "git://github.com/kobrix/Minimal-Gulp-Sass-Pug-starter.git"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
   },
   "keywords": [
-    "gulp",
-    "scss",
-    "js",
-    "images"
+    "Gulp",
+    "Sass",
+    "Pug",
+    "CSS",
+    "HTML",
+    "Browsersync"
   ],
-  "author": "Joe Richardson",
+  "author": "Kobrix",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dope/gulp-starter/issues"
-  },
-  "homepage": "https://github.com/dope/gulp-starter",
   "devDependencies": {
-    "browser-sync": "^2.0.0",
-    "gulp": "^3.8.8",
-    "gulp-autoprefixer": "^1.0.1",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-plumber": "^0.6.6",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.1.0",
-    "imagemin-pngquant": "^4.0.0"
-  }
+    "autoprefixer": "^9.8.0",
+    "bourbon": "^7.0.0",
+    "browser-sync": "^2.26.7",
+    "caniuse-lite": "^1.0.30001079",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "normalize.css": "^8.0.1"
+  },
+  "browserslist": [
+    "last 15 versions",
+    "> 1%",
+    "IE 10"
+  ],
+  "dependencies": {}
 }

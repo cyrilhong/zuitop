@@ -1,98 +1,150 @@
-/*=============================================
-=            Gulp Starter by @dope            =
-=============================================*/
-
-/**
-*
-* The packages we are using
-* Not using gulp-load-plugins as it is nice to see whats here.
-*
-**/
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var browserSync  = require('browser-sync');
-var prefix       = require('gulp-autoprefixer');
-var plumber      = require('gulp-plumber');
-var uglify       = require('gulp-uglify');
-var rename       = require("gulp-rename");
-var imagemin     = require("gulp-imagemin");
-var pngquant     = require('imagemin-pngquant');
-
-/**
-*
-* Styles
-* - Compile
-* - Compress/Minify
-* - Catch errors (gulp-plumber)
-* - Autoprefixer
-*
-**/
-gulp.task('sass', function() {
-  gulp.src('sass/**/*.scss')
-  .pipe(sass({outputStyle: 'compressed'}))
-  .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
-  .pipe(plumber())
-  .pipe(gulp.dest('css'));
-});
-
-/**
-*
-* BrowserSync.io
-* - Watch CSS, JS & HTML for changes
-* - View project at: localhost:3000
-*
-**/
-gulp.task('browser-sync', function() {
-  browserSync.init(['css/*.css', 'js/**/*.js', 'index.html'], {
-    server: {
-      baseDir: './'
-    }
-  });
-});
+const gulp = require('gulp'),
+	autoprefixer = require('autoprefixer'),
+	bourbon = require('bourbon').includePaths,
+	cssnano = require('cssnano'),
+	del = require('del'),
+	imagemin = require('gulp-imagemin'),
+	postcss = require('gulp-postcss'),
+	pug = require('gulp-pug'),
+	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps'),
+	browsersync = require('browser-sync').create();
 
 
-/**
-*
-* Javascript
-* - Uglify
-*
-**/
-gulp.task('scripts', function() {
-  gulp.src('js/*.js')
-  .pipe(uglify())
-  .pipe(rename({
-    dirname: "min",
-    suffix: ".min",
-  }))
-  .pipe(gulp.dest('js'))
-});
-
-/**
-*
-* Images
-* - Compress them!
-*
-**/
-gulp.task('images', function () {
-  return gulp.src('images/*')
-  .pipe(imagemin({
-    progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
-    use: [pngquant()]
-  }))
-  .pipe(gulp.dest('images'));
-});
+/*----- directories -----------------------------------------------*/
+const dir = {
+	src: './_src/',		// where our source files live
+	dest: './_site/',		// where we build our files to
+};
 
 
-/**
-*
-* Default task
-* - Runs sass, browser-sync, scripts and image tasks
-* - Watchs for file changes for images, scripts and sass/css
-*
-**/
-gulp.task('default', ['sass', 'browser-sync', 'scripts', 'images'], function () {
-  gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch('js/**/*.js', ['scripts']);
-  gulp.watch('images/*', ['images']);
-});
+/*----- clobber the build directory -------------------------------*/
+function clean() {
+	return del(
+		dir.dest,
+	);
+}
+
+
+/*----- compile Pug files to html ---------------------------------*/
+const htmlConfig = {
+	src: dir.src + '_pug/**/*.pug',
+	watch: dir.src + '_pug/**/*.pug',
+	dest: dir.dest,
+};
+
+function html() {
+	return gulp.src(htmlConfig.src)
+		.pipe(pug())
+		.pipe(gulp.dest(htmlConfig.dest))
+		;
+}
+
+/*----- compile SASS to CSS ---------------------------------------*/
+const cssConfig = {
+	src: dir.src + '_sass/main.sass',
+	watch: dir.src + '_sass/**/*.{css,sass,scss}',
+	dist: dir.dest,
+
+	postCSS: [
+		autoprefixer(), // browser options moved to package.json
+		cssnano()
+	]
+};
+
+function css() {
+	return gulp.src(cssConfig.src)
+		// we include node_modules so we can @import normalize.css installed by npm
+		.pipe(sass({ includePaths: ['node_modules', bourbon] }).on('error', sass.logError))
+		// pass it through autoprefixer (with sourcemap)
+		.pipe(sourcemaps.init())
+		.pipe(postcss(cssConfig.postCSS))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest(cssConfig.dist))
+		.pipe(browsersync.stream())
+		;
+}
+
+
+/*----- process images --------------------------------------------*/
+const imgConfig = {
+	src: dir.src + '_assets/img/**/*',
+	watch: dir.src + '_assets/img/**/*',
+	dist: dir.dest + 'assets/img/',
+
+	plugins: [
+		imagemin.gifsicle({ interlaced: true }),
+		imagemin.mozjpeg({ progressive: true }),
+		imagemin.optipng({ optimizationLevel: 5 }),
+		imagemin.svgo({
+			plugins: [
+				{
+					removeViewBox: false,
+					removeDoctype: false,
+					collapseGroups: false,
+				}
+			]
+		})
+	]
+};
+
+function images() {
+	return gulp.src(imgConfig.src)
+		.pipe(imagemin(imgConfig.plugins))
+		.pipe(gulp.dest(imgConfig.dist))
+		.pipe(browsersync.stream())
+		;
+}
+
+
+/*----- browserSync -----------------------------------------------*/
+function browserSync(done) {
+	browsersync.init({
+		server: {
+			baseDir: dir.dest,
+		},
+		browser: 'firefox developer edition',
+		notify: false,
+	});
+	done();
+}
+
+// browserSync Reload
+function browserSyncReload(done) {
+	browsersync.reload();
+	done();
+}
+
+
+/*----- watch tasks -----------------------------------------------*/
+function watchFiles() {
+	gulp.watch(cssConfig.watch, css);
+	gulp.watch(htmlConfig.watch, html);
+	gulp.watch(
+		[
+			dir.dest + '*.html',
+		],
+		gulp.series(browserSyncReload)
+	);
+	gulp.watch(imgConfig.watch, images);
+}
+
+
+/*----- gulp routines ---------------------------------------------*/
+const build = gulp.series(clean, html, gulp.parallel(css, images));
+const watch = gulp.parallel(watchFiles, browserSync);
+
+
+/*----- export tasks ----------------------------------------------*/
+exports.clean = clean;
+exports.html = html;
+exports.css = css;
+exports.images = images;
+exports.build = build;
+exports.watch = watch;
+exports.default = gulp.series(build, watch);
+
+
+/*-----------------------------------------------------------------*/
+/*----- NOTES -----------------------------------------------------*/
+

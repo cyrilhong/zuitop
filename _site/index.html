@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8"><title>Gulp Sass Pug playground</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head><body><div class="container"><div class="col-12"><div class="header"></div><div class="logo"><img src="/assets/img/logo.png" alt="logo"></div><div class="language"><a href="#"></a>繁 /<a href="#"></a>簡 /<a href="#"></a>EN</div></div><ul class="menu"><li value="1">ZUITOP</li><li value="2">關於瑞志</li><li>產品介紹</li><li>合作夥伴</li><li>聯絡我們</li><div class="sub-menu"></div><ul class="sub-01"><li>瑞志實業</li><li>多元發展</li></ul><ul class="sub-02"><li>石化原料</li><li>單體</li></ul></ul></div><div class="main"></div><div class="container"><div class="col-12"><div class="contact"><div class="bolder">ZUITOP TRADING CO.,LTD</div>        No. 29-13, Sec. 1, Anhe Rd., Da’an Dist., Taipei City 106, Taiwan<br>        TEL- +886 02 87730128 | FAX- +886 02 87730128<br>        E-MAIL- zuitop.global@zuitop.com</div></div></div><div class="footer"><div class="container"><div class="col-12"></div>COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.</div></div></body><script>$(document).ready(function () {
+console.log("ready!");
+var currentMenu = '';
+$('.menu > li').click(function () {
+currentMenu = $(this)[0].value;
+console.log(currentMenu);
+switch (currentMenu) {
+case 1:
+$('.sub-menu > ul').hide();
+$('.sub-01').toggle();
+break;
+case 2:
+$('.sub-menu > ul').hide();
+$('.sub-02').toggle();
+break;
+default:
+break;
+}
+})
+});</script></html>
