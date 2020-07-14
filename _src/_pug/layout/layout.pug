@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        include head
+
+    body(class=pageClass)
+        //BEGIN out
+        main(class=outClass)
+
+            block header
+                include ../partials/header
+
+            block content
+
+            block footer
+                include ../partials/footer
+            //END out
+
+            //LOAD SCRIPTS
+        block scripts
+            script(type="text/javascript" src="js/app.js")

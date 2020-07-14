@@ -1,0 +1,79 @@
+.container
+    .col-12
+        .header
+            .logo
+                img(src="/assets/img/logo.png" alt="logo")
+            .language
+                a(href="#")
+                | 繁 /
+                a(href="#")
+                | 簡 /
+                a(href="#")
+                | EN
+    ul.menu
+        li(value="index") ZUITOP
+        li(value="about") 關於瑞志
+        li(value="product") 產品介紹
+        li(value="coop") 合作夥伴
+        li(value="contact") 聯絡我們
+        .sub-menu
+            ul.sub-02
+                li
+                    a(href="/about.html")|瑞志實業
+                li 多元發展
+            ul.sub-03
+                li
+                    a(href="/product.html")|石化原料
+                li 單體
+                li Chlor / Alkali
+                li 塑膠品
+                li
+                    a(href="/product.html#stuff")|特用化學品
+script.
+    $(document).ready(function () {
+        var currentMenu = '';
+        var url = location.pathname;
+        switch (url) {
+            case '/about.html':
+                $("li[value='about']").addClass('active')
+                break;
+            case '/product.html':
+                $("li[value='product']").addClass('active')
+                break;
+            default:
+                $("li[value='index']").addClass('active')
+                break;
+        }
+        $('.menu > li').click(function () {
+            console.log($(this)[0].attributes[0].value)
+            if(currentMenu === $(this)[0].attributes[0].value){
+                $('.sub-menu > ul').hide();
+                $('.menu > li').removeClass('active');
+                currentMenu = '';
+            }else{
+                currentMenu = $(this)[0].attributes[0].value;
+                console.log(currentMenu);
+                switch (currentMenu) {
+                case 'index':
+                    window.location.href = '/'
+                    break;
+                case 'about':
+                    //- window.location.href = '/about.html'
+                    $('.sub-menu > ul').hide();
+                    $('.menu > li').removeClass('active');
+                    $(this).addClass('active');
+                    $('.sub-02').toggle();
+                    break;
+                case 'product':
+                    $('.sub-menu > ul').hide();
+                    $('.menu > li').removeClass('active');
+                    $(this).addClass('active');
+                    $('.sub-03').toggle();
+                    break;
+                default:
+                    break;
+                }
+            }})
+            }
+        );
+
