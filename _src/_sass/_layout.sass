@@ -47,6 +47,10 @@ body
         cursor: pointer
     .active
         border-bottom: 5px solid $red
+    .sub-menu
+        .active
+            border-bottom: 2px solid $red
+            padding-bottom: 2px
 
 .sub-menu
     padding-top: 20px
@@ -155,9 +159,6 @@ body
                 color: #595757
                 line-height: 22px
 
-    .bolder
-        font-weight: 600
-        font-size: 16px
 .index
     background-image: url("./assets/img/index.jpg")
     height: 510px
@@ -176,6 +177,14 @@ body
                 h1
                     color: #fff   
                     font-size: 30px
+.index-contact
+    margin: 40px 0
+    font-size: 12px
+    color: #737373
+    .bolder
+        font-weight: 600
+        font-size: 16px
+        color: #000
 .developing
     background-image: url("./assets/img/bg-03-2.jpg")
     min-width: 730px
@@ -235,3 +244,11 @@ body
     color: #fff
     font-size: 12px
     padding: 16px 0
+    .triangle
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 10px 12px 10px
+        border-color: transparent transparent #fff transparent
+        display: inline-block
+        float: right
