@@ -23,12 +23,15 @@
                     a(href="/developing.html")|多元發展
             ul.sub-03
                 li
-                    a(href="/product.html")|石化原料
-                li 單體
-                li Chlor / Alkali
-                li 塑膠品
+                    a(href="/product.html#olefin")|石化原料
+                li 
+                    a(href="/product.html#monomers")|單體
+                li 
+                    a(href="/product.html#chlor")|Chlor / Alkali
+                li 
+                    a(href="/product.html#plastic")|塑膠品
                 li
-                    a(href="/product.html#stuff")|特用化學品
+                    a(href="/product.html#special-chemicals")|特用化學品
 script.
     $(document).ready(function () {
         var currentMenu = '';
@@ -58,7 +61,6 @@ script.
                     window.location.href = '/'
                     break;
                 case 'about':
-                    //- window.location.href = '/about.html'
                     $('.sub-menu > ul').hide();
                     $('.menu > li').removeClass('active');
                     $(this).addClass('active');
@@ -69,6 +71,18 @@ script.
                     $('.menu > li').removeClass('active');
                     $(this).addClass('active');
                     $('.sub-03').toggle();
+                    break;
+                case 'coop':
+                    window.location.href = '/partners.html'
+                    $('.sub-menu > ul').hide();
+                    $('.menu > li').removeClass('active');
+                    $(this).addClass('active');
+                    break;
+                case 'contact':
+                    window.location.href = '/contact.html'
+                    $('.sub-menu > ul').hide();
+                    $('.menu > li').removeClass('active');
+                    $(this).addClass('active');
                     break;
                 default:
                     break;

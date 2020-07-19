@@ -10,6 +10,7 @@ img
 
 body
     background: salmon
+    font-family: 'san-serif'
 
     a
         color: #000
@@ -74,24 +75,53 @@ body
         font-weight: 600
         font-size: 16px
 
-.about
-    background-image: url("/assets/img/bg-02.jpg")
-    height: 510px
+.main
+    min-height: 510px
     background-size: cover
     background-position: center bottom
-    padding: 40px 80px
+    padding: 40px
+    margin-bottom: 90px
     span
         background-color: red
         color: #fff
+        padding: 4px 8px 
+        font-size: 16px
     h1
         font-size: 36px
         color: #fff
         font-weight: 300
+        margin-top: 24px
+    h2
+        font-size: 24px
+        color: #fff
+        font-weight: 400
+        margin-top: 24px
     p 
         font-size: 20px
         color: #fff
         line-height: 30px
-.main
+        // margin-top: 130px
+    ol
+        display: inline-flex
+        flex-direction: column
+        padding-inline-start: 20px
+        margin-bottom: 30px
+        li
+            color: #fff
+            border: 0
+            display: list-item
+            padding: 0
+            margin: 0
+            font-size: 18px
+            line-height: 1.75
+    .sub-content
+        p
+            margin-bottom: 30px
+.about
+    background-image: url("/assets/img/bg-02.jpg")
+    p
+        margin-top: 130px
+.index
     background-image: url("/assets/img/index.jpg")
     height: 510px
     background-size: cover
@@ -109,9 +139,58 @@ body
                 h1
                     color: #fff   
                     font-size: 30px
-.wrapper
-    height: 500px
-
+.developing
+    background-image: url("/assets/img/bg-03-2.jpg")
+    min-width: 730px
+    .title
+        margin-top: 70px
+.product
+    background-image: url("/assets/img/bg-04.jpg")
+    color: #000
+    h1
+        color: #000
+    p
+        color: inherit
+    .wrapper
+        p
+            span
+                background-color: #fff
+                padding: 0
+                font-size: 20px
+                font-weight: 800
+                color: #000
+    ul
+        display: inline-block
+        flex-direction: column
+        padding-inline-start: 0
+        margin-bottom: 30px
+        list-style-type: none
+        width: 100%
+        li
+            width: 33.33%
+            display: inline-block
+            border: 0
+            display: list-item
+            padding: 0 20px 0 0
+            margin: 0 0 20px 0
+            line-height: 1.75
+            min-height: 52px
+            p
+                margin-bottom: -6px
+            small
+                font-size: 14px
+    .special-chemicals
+        ul
+            li
+                width: 50%
+.partners
+    background-image: url("/assets/img/bg-5.jpg")
+    p
+        margin-top: 40px
+        margin-bottom: 0
+    .sub-content
+        font-size: 16px
+        color: #fff
 .footer
     background: rgb(162, 0, 0)
     background: linear-gradient(90deg, rgba(162, 0, 0, 1) 0%, rgba(228, 0, 18, 1) 100%)
