@@ -1,17 +1,58 @@
-<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Gulp Sass Pug playground</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><img src="/assets/img/logo.png" alt="logo"></div><div class="language"><a href="#"></a>繁 /<a href="#"></a>簡 /<a href="#"></a>EN</div></div><ul class="menu"><li value="index">ZUITOP</li><li value="about">關於瑞志</li><li value="product">產品介紹</li><li value="coop">合作夥伴</li><li value="contact">聯絡我們</li><div class="sub-menu"><ul class="sub-02"><li><a href="/about.html">瑞志實業</a></li><li><a href="/developing.html">多元發展</a></li></ul><ul class="sub-03"><li><a href="/product.html#olefin">石化原料</a></li><li> <a href="/product.html#monomers">單體</a></li><li> <a href="/product.html#chlor">Chlor / Alkali</a></li><li> <a href="/product.html#plastic">塑膠品</a></li><li><a href="/product.html#special-chemicals">特用化學品</a></li></ul></div></ul></div><script>$(document).ready(function () {
+<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Gulp Sass Pug playground</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><img src="/assets/img/logo.png" alt="logo"></div><div class="language"><a href="#"></a>繁 /<a href="#"></a>簡 /<a href="#"></a>EN</div></div><ul class="menu"><li value="index">ZUITOP</li><li value="about">關於瑞志</li><li value="product">產品介紹</li><li value="coop">合作夥伴</li><li value="contact">聯絡我們</li><div class="sub-menu"><ul class="sub-02"><li><a href="/about.html">瑞志實業</a></li><li><a href="/developing.html">多元發展</a></li></ul><ul class="sub-03"><li><a class="olefin" href="/product.html#olefin">石化原料</a></li><li> <a class="monomers" href="/product.html#monomers">單體</a></li><li> <a class="chlor" href="/product.html#chlor">Chlor / Alkali</a></li><li> <a class="plastic" href="/product.html#plastic">塑膠品</a></li><li><a class="special-chemicals" href="/product.html#special-chemicals">特用化學品</a></li></ul></div></ul></div><script>$(document).ready(function () {
     var currentMenu = '';
     var url = location.pathname;
+    var anchor = window.top.location.hash
     switch (url) {
         case '/about.html':
             $("li[value='about']").addClass('active')
+            $('.sub-02').toggle();
+            $("a[href='/about.html']").addClass('active')
+            break;
+        case '/developing.html':
+            $("li[value='about']").addClass('active')
+            $('.sub-02').toggle();
+            $("a[href='/developing.html']").addClass('active')
             break;
         case '/product.html':
             $("li[value='product']").addClass('active')
+            $('.sub-03').toggle();
+            switch(anchor){
+                case '#olefin':
+                    console.log('#olefin')
+                    $("a[href='/product.html#olefin']").addClass('active')
+                    break;
+                case '#monomers':
+                    $("a[href='/product.html#monomers']").addClass('active')
+                    break;
+                case '#chlor':
+                    $("a[href='/product.html#chlor']").addClass('active')
+                    break;
+                case '#plastic':
+                    $("a[href='/product.html#plastic']").addClass('active')
+                    break;
+                case '#special-chemicals':
+                    $("a[href='/product.html#special-chemicals']").addClass('active')
+                    break;
+                default:
+                break;
+            }
+            break;
+        case '/coop.html':
+            $("li[value='coop']").addClass('active')
+            break;
+        case '/contact.html':
+            $("li[value='contact']").addClass('active')
             break;
         default:
             $("li[value='index']").addClass('active')
             break;
     }
+    $('ul.sub-03 > li > a').click(function () {
+        console.log($(this)[0])
+        $('.sub-03 > li > a').removeClass('active');
+        $(this).addClass('active');
+        
+    });
     $('.menu > li').click(function () {
         console.log($(this)[0].attributes[0].value)
         if(currentMenu === $(this)[0].attributes[0].value){
@@ -38,7 +79,7 @@
                 $('.sub-03').toggle();
                 break;
             case 'coop':
-                window.location.href = '/partners.html'
+                window.location.href = '/coop.html'
                 $('.sub-menu > ul').hide();
                 $('.menu > li').removeClass('active');
                 $(this).addClass('active');
@@ -54,4 +95,4 @@
             }
         }})
         }
-    );</script><div class="container"><div class="row"><div class="col-12"><div class="main developing"><span>瑞智實業精神</span><h2> 瑞志集團主要致力於石化上、中、下游產品的國際貿易。<br>除買賣之外；同時提供靈活多變的交易模式及增值服務，<br>全力為眾多客戶與合作夥伴創造更多價值和利潤。</h2><p class="title"> 彈性多元的交易模式</p><ol><li>簽訂長期契約以確保供應商穩定出貨</li><li>出口貨品散裝整合並利用槽車分銷至終端使用者</li><li>與生產商的緊密合作加以在海外市場設置保稅倉庫 / 保稅罐；於當地分銷並嚴格控管庫存</li><li>完善的三角貿易操作並提供流暢的時間差 / 運費差之換貨 (SWAP)</li><li>開拓新產品市場以及客戶群</li></ol><div class="sub-content"><p>安全且縝密的運輸系統</p><p>瑞志累積多年豐富的經驗並與船東保持優良的合作關係，我們專業的團隊能確保您的貨品以最佳成本，安全且效率地送達目的地。</p><p>值得信賴的交易夥伴</p><p>瑞志集團於業界享負數十年的優良信譽，憑藉堅實的財務基礎作為後盾，得以有效管理進而降低各層面之金融風險。給予供應商及客戶最具備安全與競爭力的交易付款條件</p></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12"></div>COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.</div></div><!--END out--><!--LOAD SCRIPTS--></main><script type="text/javascript" src="js/app.js"></script></body></html>
+    );</script><div class="container"><div class="row"><div class="col-12"><div class="main developing"><span>瑞智實業精神</span><h2> 瑞志集團主要致力於石化上、中、下游產品的國際貿易。<br>除買賣之外；同時提供靈活多變的交易模式及增值服務，<br>全力為眾多客戶與合作夥伴創造更多價值和利潤。</h2><p class="title"> 彈性多元的交易模式</p><ol><li>簽訂長期契約以確保供應商穩定出貨</li><li>出口貨品散裝整合並利用槽車分銷至終端使用者</li><li>與生產商的緊密合作加以在海外市場設置保稅倉庫 / 保稅罐；於當地分銷並嚴格控管庫存</li><li>完善的三角貿易操作並提供流暢的時間差 / 運費差之換貨 (SWAP)</li><li>開拓新產品市場以及客戶群</li></ol><div class="sub-content"><p>安全且縝密的運輸系統</p><p>瑞志累積多年豐富的經驗並與船東保持優良的合作關係，我們專業的團隊能確保您的貨品以最佳成本，安全且效率地送達目的地。</p><p>值得信賴的交易夥伴</p><p>瑞志集團於業界享負數十年的優良信譽，憑藉堅實的財務基礎作為後盾，得以有效管理進而降低各層面之金融風險。給予供應商及客戶最具備安全與競爭力的交易付款條件</p></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12"></div>COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.</div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>

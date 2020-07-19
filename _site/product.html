@@ -1,17 +1,58 @@
-<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Gulp Sass Pug playground</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><img src="/assets/img/logo.png" alt="logo"></div><div class="language"><a href="#"></a>繁 /<a href="#"></a>簡 /<a href="#"></a>EN</div></div><ul class="menu"><li value="index">ZUITOP</li><li value="about">關於瑞志</li><li value="product">產品介紹</li><li value="coop">合作夥伴</li><li value="contact">聯絡我們</li><div class="sub-menu"><ul class="sub-02"><li><a href="/about.html">瑞志實業</a></li><li><a href="/developing.html">多元發展</a></li></ul><ul class="sub-03"><li><a href="/product.html#olefin">石化原料</a></li><li> <a href="/product.html#monomers">單體</a></li><li> <a href="/product.html#chlor">Chlor / Alkali</a></li><li> <a href="/product.html#plastic">塑膠品</a></li><li><a href="/product.html#special-chemicals">特用化學品</a></li></ul></div></ul></div><script>$(document).ready(function () {
+<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Gulp Sass Pug playground</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><img src="/assets/img/logo.png" alt="logo"></div><div class="language"><a href="#"></a>繁 /<a href="#"></a>簡 /<a href="#"></a>EN</div></div><ul class="menu"><li value="index">ZUITOP</li><li value="about">關於瑞志</li><li value="product">產品介紹</li><li value="coop">合作夥伴</li><li value="contact">聯絡我們</li><div class="sub-menu"><ul class="sub-02"><li><a href="/about.html">瑞志實業</a></li><li><a href="/developing.html">多元發展</a></li></ul><ul class="sub-03"><li><a class="olefin" href="/product.html#olefin">石化原料</a></li><li> <a class="monomers" href="/product.html#monomers">單體</a></li><li> <a class="chlor" href="/product.html#chlor">Chlor / Alkali</a></li><li> <a class="plastic" href="/product.html#plastic">塑膠品</a></li><li><a class="special-chemicals" href="/product.html#special-chemicals">特用化學品</a></li></ul></div></ul></div><script>$(document).ready(function () {
     var currentMenu = '';
     var url = location.pathname;
+    var anchor = window.top.location.hash
     switch (url) {
         case '/about.html':
             $("li[value='about']").addClass('active')
+            $('.sub-02').toggle();
+            $("a[href='/about.html']").addClass('active')
+            break;
+        case '/developing.html':
+            $("li[value='about']").addClass('active')
+            $('.sub-02').toggle();
+            $("a[href='/developing.html']").addClass('active')
             break;
         case '/product.html':
             $("li[value='product']").addClass('active')
+            $('.sub-03').toggle();
+            switch(anchor){
+                case '#olefin':
+                    console.log('#olefin')
+                    $("a[href='/product.html#olefin']").addClass('active')
+                    break;
+                case '#monomers':
+                    $("a[href='/product.html#monomers']").addClass('active')
+                    break;
+                case '#chlor':
+                    $("a[href='/product.html#chlor']").addClass('active')
+                    break;
+                case '#plastic':
+                    $("a[href='/product.html#plastic']").addClass('active')
+                    break;
+                case '#special-chemicals':
+                    $("a[href='/product.html#special-chemicals']").addClass('active')
+                    break;
+                default:
+                break;
+            }
+            break;
+        case '/coop.html':
+            $("li[value='coop']").addClass('active')
+            break;
+        case '/contact.html':
+            $("li[value='contact']").addClass('active')
             break;
         default:
             $("li[value='index']").addClass('active')
             break;
     }
+    $('ul.sub-03 > li > a').click(function () {
+        console.log($(this)[0])
+        $('.sub-03 > li > a').removeClass('active');
+        $(this).addClass('active');
+        
+    });
     $('.menu > li').click(function () {
         console.log($(this)[0].attributes[0].value)
         if(currentMenu === $(this)[0].attributes[0].value){
@@ -38,7 +79,7 @@
                 $('.sub-03').toggle();
                 break;
             case 'coop':
-                window.location.href = '/partners.html'
+                window.location.href = '/coop.html'
                 $('.sub-menu > ul').hide();
                 $('.menu > li').removeClass('active');
                 $(this).addClass('active');
@@ -54,4 +95,4 @@
             }
         }})
         }
-    );</script><div class="container"><div class="row"><div class="col-12"><div class="main product"><div class="wrapper"><p id="olefin">石化原料 <span>Olefin</span></p><ul><li><p>乙烯</p><small>Ethylene</small></li><li><p>丙烯</p><small>Propylene</small></li><li><p>丁二烯</p><small>1, 3 Butadiene</small></li><li><p>丁二烯萃餘油</p><small>Ethylene</small></li><li><p>C5 衍生物</p></li><li><p>離雙環戊二烯</p><small>DCPD</small></li><li><p>異戊二烯</p><small>Lsoprene</small></li><li><p>及間戊二烯</p><small>PIPS</small></li></ul></div><div class="wrapper"><p id="monomers">單體 <span>Monomers</span></p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>丙烯酸乙酯</p><small>(EA) (Ethyl Acrylate)</small></li><li><p>丙烯酸丁酯</p><small>(BA) (Butyl Acrylate)</small></li><li><p>丙烯酸異辛酯</p><small>(2-EHA)</small></li><li><p>丙烯腈</p><small>(AN)</small></li><li><p>乙腈</p><small>(ACN)</small></li><li><p>碳酸乙烯酯</p><small>(EC)</small></li><li><p>二乙胺</p><small>(DEA)</small></li><li><p>甲基丙烯酸</p><small>(MAA)(Methacrylic Acid)</small></li><li><p>甲基丙烯酸甲酯</p><small>(MMA)(Methyl Methacrylate)</small></li><li><p>乙二醇</p><small>(EG)(Mono-ethylene Glycol)</small></li><li><p>二乙二醇</p><small>(DEG)(Di-ethylene Glycol)</small></li><li><p>乙二醇丁醚</p><small>(BCS)</small></li><li><p>二乙二醇丁醚</p><small>(DB)</small></li><li><p>乙醇胺</p><small>(MEA)</small></li><li><p>四氫呋喃</p><small>(THF)</small></li></ul></div><div class="wrapper"><p id="chlor"> <span>Chlor / Alkali</span></p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>二氯甲烷</p><small>(MC)(Dichloromethane)</small></li><li><p>片鹼</p></li><li><p>粒鹼</p></li><li><p>二氯乙烷</p><small>EDC</small></li><li><p>環氧氯丙烷</p><small>(ECH)(Epichlorohydrin)</small></li><li><p>氯乙烯</p><small>(VCM)</small></li><li><p>偏二氯乙烯</p><small>(VCL2)</small></li></ul></div><div class="wrapper"><p id="plastic">塑膠品 <span>Plastic</span></p><ul><li><p>PVC</p></li><li><p>PE</p></li><li><p>PP</p></li><li><p>HDPE</p></li><li><p>LDPE</p></li><li><p>LLDPE</p></li><li><p>EVA</p></li><li><p>Suspension PVC</p></li><li><p>Emulsion / Paste PVC</p></li><li><p>PVC Modifiers</p></li><li><p>DOP, DOTP</p></li><li><p>DINP, DIDP</p></li><li><p>Plasticizers</p></li></ul></div><div class="wrapper special-chemicals"><p id="special-chemicals">特用化學品 <span>Specialty Chemicals</span></p><ul><li><p>Polymerization Initiator</p></li><li><p>Silane External Donor</p></li><li><p>Co0cataysts for Ziegler Natta Catalyst</p></li><li><p>Polymerization Inhibitor</p></li><li><p>Hydrogenation Catalyst</p></li></ul></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12"></div>COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.</div></div><!--END out--><!--LOAD SCRIPTS--></main><script type="text/javascript" src="js/app.js"></script></body></html>
+    );</script><div class="container"><div class="row"><div class="col-12"><div class="main product"><div class="wrapper"><p id="olefin">石化原料 <span>Olefin</span></p><ul><li><p>乙烯</p><small>Ethylene</small></li><li><p>丙烯</p><small>Propylene</small></li><li><p>丁二烯</p><small>1, 3 Butadiene</small></li><li><p>丁二烯萃餘油</p><small>Ethylene</small></li><li><p>C5 衍生物</p></li><li><p>離雙環戊二烯</p><small>DCPD</small></li><li><p>異戊二烯</p><small>Lsoprene</small></li><li><p>及間戊二烯</p><small>PIPS</small></li></ul></div><div class="wrapper"><p id="monomers">單體 <span>Monomers</span></p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>丙烯酸乙酯</p><small>(EA) (Ethyl Acrylate)</small></li><li><p>丙烯酸丁酯</p><small>(BA) (Butyl Acrylate)</small></li><li><p>丙烯酸異辛酯</p><small>(2-EHA)</small></li><li><p>丙烯腈</p><small>(AN)</small></li><li><p>乙腈</p><small>(ACN)</small></li><li><p>碳酸乙烯酯</p><small>(EC)</small></li><li><p>二乙胺</p><small>(DEA)</small></li><li><p>甲基丙烯酸</p><small>(MAA)(Methacrylic Acid)</small></li><li><p>甲基丙烯酸甲酯</p><small>(MMA)(Methyl Methacrylate)</small></li><li><p>乙二醇</p><small>(EG)(Mono-ethylene Glycol)</small></li><li><p>二乙二醇</p><small>(DEG)(Di-ethylene Glycol)</small></li><li><p>乙二醇丁醚</p><small>(BCS)</small></li><li><p>二乙二醇丁醚</p><small>(DB)</small></li><li><p>乙醇胺</p><small>(MEA)</small></li><li><p>四氫呋喃</p><small>(THF)</small></li></ul></div><div class="wrapper"><p id="chlor"> <span>Chlor / Alkali</span></p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>二氯甲烷</p><small>(MC)(Dichloromethane)</small></li><li><p>片鹼</p></li><li><p>粒鹼</p></li><li><p>二氯乙烷</p><small>EDC</small></li><li><p>環氧氯丙烷</p><small>(ECH)(Epichlorohydrin)</small></li><li><p>氯乙烯</p><small>(VCM)</small></li><li><p>偏二氯乙烯</p><small>(VCL2)</small></li></ul></div><div class="wrapper"><p id="plastic">塑膠品 <span>Plastic</span></p><ul><li><p>PVC</p></li><li><p>PE</p></li><li><p>PP</p></li><li><p>HDPE</p></li><li><p>LDPE</p></li><li><p>LLDPE</p></li><li><p>EVA</p></li><li><p>Suspension PVC</p></li><li><p>Emulsion / Paste PVC</p></li><li><p>PVC Modifiers</p></li><li><p>DOP, DOTP</p></li><li><p>DINP, DIDP</p></li><li><p>Plasticizers</p></li></ul></div><div class="wrapper special-chemicals"><p id="special-chemicals">特用化學品 <span>Specialty Chemicals</span></p><ul><li><p>Polymerization Initiator</p></li><li><p>Silane External Donor</p></li><li><p>Co0cataysts for Ziegler Natta Catalyst</p></li><li><p>Polymerization Inhibitor</p></li><li><p>Hydrogenation Catalyst</p></li></ul></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12"></div>COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.</div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
