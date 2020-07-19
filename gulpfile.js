@@ -14,7 +14,7 @@ const gulp = require('gulp'),
 /*----- directories -----------------------------------------------*/
 const dir = {
 	src: './_src/',		// where our source files live
-	dest: './_site/',		// where we build our files to
+	dest: './docs/',		// where we build our files to
 };
 
 
