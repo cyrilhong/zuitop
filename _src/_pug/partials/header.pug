@@ -1,76 +1,86 @@
 .container
     .header
         .logo
-            img(src="./assets/img/logo.png" alt="logo")
+            a(href='/')
+                img(src="./assets/img/logo.png" alt="logo")
         .language
             a(href="#")
-            | 繁 /
+            | 繁 / 
             a(href="#")
-            | 簡 /
+            | 簡 / 
             a(href="#")
-            | EN
+            | EN 
     ul.menu
-        li(value="index") ZUITOP
-        li(value="about") 關於瑞志
-        li(value="product") 產品介紹
-        li(value="coop") 合作夥伴
-        li(value="contact") 聯絡我們
-        .sub-menu
-            ul.sub-02
-                li
-                    a(href="/about.html")|瑞志實業
-                li
-                    a(href="/developing.html")|多元發展
-            ul.sub-03
-                li
-                    a.olefin(href="/product.html#olefin")|石化原料
-                li 
-                    a.monomers(href="/product.html#monomers")|單體
-                li 
-                    a.chlor(href="/product.html#chlor")|Chlor / Alkali
-                li 
-                    a.plastic(href="/product.html#plastic")|塑膠品
-                li
-                    a.special-chemicals(href="/product.html#special-chemicals")|特用化學品
+        li(value="index") 
+            a.index-page(href='/') ZUITOP
+        li(value="about") 
+            a(href='/about.html') 關於瑞志
+        li(value="product") 
+            a(href='/product.html') 產品介紹
+        li(value="coop") 
+            a(href='/coop.html') 合作夥伴
+        li(value="contact") 
+            a(href='/contact.html') 聯絡我們
+        //- .sub-menu
+        //-     ul.sub-02
+        //-         li
+        //-             a(href="/about.html")|瑞志實業
+        //-         li
+        //-             a(href="/developing.html")|多元發展
+        //-     ul.sub-03
+        //-         li
+        //-             a.olefin(href="/product.html#olefin")|石化原料
+        //-         li 
+        //-             a.monomers(href="/product.html#monomers")|單體
+        //-         li 
+        //-             a.chlor(href="/product.html#chlor")|Chlor / Alkali
+        //-         li 
+        //-             a.plastic(href="/product.html#plastic")|塑膠品
+        //-         li
+        //-             a.special-chemicals(href="/product.html#special-chemicals")|特用化學品
 script.
     $(document).ready(function () {
+        //- document.addEventListener("contextmenu", function(e){
+        //-     e.preventDefault();
+        //- }, false);
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
+        console.log(url)
         switch (url) {
             case '/about.html':
                 $("li[value='about']").addClass('active')
-                $('.sub-02').toggle();
-                $("a[href='/about.html']").addClass('active')
+                //- $('.sub-02').toggle();
+                //- $("a[href='/about.html']").addClass('active')
                 break;
             case '/developing.html':
                 $("li[value='about']").addClass('active')
-                $('.sub-02').toggle();
-                $("a[href='/developing.html']").addClass('active')
+                //- $('.sub-02').toggle();
+                //- $("a[href='/developing.html']").addClass('active')
                 break;
             case '/product.html':
                 $("li[value='product']").addClass('active')
-                $('.sub-03').toggle();
-                switch(anchor){
-                    case '#olefin':
-                        console.log('#olefin')
-                        $("a[href='/product.html#olefin']").addClass('active')
-                        break;
-                    case '#monomers':
-                        $("a[href='/product.html#monomers']").addClass('active')
-                        break;
-                    case '#chlor':
-                        $("a[href='/product.html#chlor']").addClass('active')
-                        break;
-                    case '#plastic':
-                        $("a[href='/product.html#plastic']").addClass('active')
-                        break;
-                    case '#special-chemicals':
-                        $("a[href='/product.html#special-chemicals']").addClass('active')
-                        break;
-                    default:
-                    break;
-                }
+                //- $('.sub-03').toggle();
+                //- switch(anchor){
+                //-     case '#olefin':
+                //-         console.log('#olefin')
+                //-         $("a[href='/product.html#olefin']").addClass('active')
+                //-         break;
+                //-     case '#monomers':
+                //-         $("a[href='/product.html#monomers']").addClass('active')
+                //-         break;
+                //-     case '#chlor':
+                //-         $("a[href='/product.html#chlor']").addClass('active')
+                //-         break;
+                //-     case '#plastic':
+                //-         $("a[href='/product.html#plastic']").addClass('active')
+                //-         break;
+                //-     case '#special-chemicals':
+                //-         $("a[href='/product.html#special-chemicals']").addClass('active')
+                //-         break;
+                //-     default:
+                //-     break;
+                //- }
                 break;
             case '/coop.html':
                 $("li[value='coop']").addClass('active')
@@ -82,53 +92,54 @@ script.
                 $("li[value='index']").addClass('active')
                 break;
         }
-        $('ul.sub-03 > li > a').click(function () {
-            console.log($(this)[0])
-            $('.sub-03 > li > a').removeClass('active');
-            $(this).addClass('active');
+        //- $('ul.sub-03 > li > a').click(function () {
+        //-     console.log($(this)[0])
+        //-     $('.sub-03 > li > a').removeClass('active');
+        //-     $(this).addClass('active');
             
-        });
-        $('.menu > li').click(function () {
-            console.log($(this)[0].attributes[0].value)
-            if(currentMenu === $(this)[0].attributes[0].value){
-                $('.sub-menu > ul').hide();
-                $('.menu > li').removeClass('active');
-                currentMenu = '';
-            }else{
-                currentMenu = $(this)[0].attributes[0].value;
-                console.log(currentMenu);
-                switch (currentMenu) {
-                case 'index':
-                    window.location.href = '/'
-                    break;
-                case 'about':
-                    $('.sub-menu > ul').hide();
-                    $('.menu > li').removeClass('active');
-                    $(this).addClass('active');
-                    $('.sub-02').toggle();
-                    break;
-                case 'product':
-                    $('.sub-menu > ul').hide();
-                    $('.menu > li').removeClass('active');
-                    $(this).addClass('active');
-                    $('.sub-03').toggle();
-                    break;
-                case 'coop':
-                    window.location.href = '/coop.html'
-                    $('.sub-menu > ul').hide();
-                    $('.menu > li').removeClass('active');
-                    $(this).addClass('active');
-                    break;
-                case 'contact':
-                    window.location.href = '/contact.html'
-                    $('.sub-menu > ul').hide();
-                    $('.menu > li').removeClass('active');
-                    $(this).addClass('active');
-                    break;
-                default:
-                    break;
-                }
-            }})
+        //- });
+        //- $('.menu > li').click(function () {
+        //-     console.log($(this)[0].attributes[0].value)
+        //-     if(currentMenu === $(this)[0].attributes[0].value){
+        //-         $('.sub-menu > ul').hide();
+        //-         $('.menu > li').removeClass('active');
+        //-         currentMenu = '';
+        //-     }else{
+        //-         currentMenu = $(this)[0].attributes[0].value;
+        //-         console.log(currentMenu);
+        //-         switch (currentMenu) {
+        //-         case 'index':
+        //-             window.location.href = '/'
+        //-             break;
+        //-         case 'about':
+        //-             $('.sub-menu > ul').hide();
+        //-             $('.menu > li').removeClass('active');
+        //-             $(this).addClass('active');
+        //-             $('.sub-02').toggle();
+        //-             break;
+        //-         case 'product':
+        //-             $('.sub-menu > ul').hide();
+        //-             $('.menu > li').removeClass('active');
+        //-             $(this).addClass('active');
+        //-             $('.sub-03').toggle();
+        //-             break;
+        //-         case 'coop':
+        //-             window.location.href = '/coop.html'
+        //-             $('.sub-menu > ul').hide();
+        //-             $('.menu > li').removeClass('active');
+        //-             $(this).addClass('active');
+        //-             break;
+        //-         case 'contact':
+        //-             window.location.href = '/contact.html'
+        //-             $('.sub-menu > ul').hide();
+        //-             $('.menu > li').removeClass('active');
+        //-             $(this).addClass('active');
+        //-             break;
+        //-         default:
+        //-             break;
+        //-         }
+        //-     }}
+            //- )
             }
         );
 

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    document.addEventListener('contextmenu', event => event.preventDefault());
     console.log("ready!");
     var currentMenu = '';
     $('.menu > li').click(function () {
