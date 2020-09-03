@@ -1,11 +1,25 @@
-<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Zuitop</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500&amp;display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><a href="/"><img src="./assets/img/logo.png" alt="logo"></a></div><div class="language"><a href="#"></a>繁 / <a href="#"></a>簡 / <a href="#"></a>EN </div></div><ul class="menu"><li value="index"> <a class="index-page" href="/">ZUITOP</a></li><li value="about"> <a href="about.html">關於瑞志</a></li><li value="product"> <a href="product.html">產品介紹</a></li><li value="coop"> <a href="coop.html">合作夥伴</a></li><li value="contact"> <a href="contact.html">聯絡我們</a></li></ul></div><script>$(document).ready(function () {
+<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Zuitop</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500&amp;display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"></head></head><body><!--BEGIN out--><main><div class="container"><div class="header"><div class="logo"><a href="/"><img src="./assets/img/zuitop-logo.svg" alt="logo"></a></div><div class="language"><a href="#"></a>繁 / <a href="#"></a>簡 / <a href="#"></a>EN </div></div><ul class="menu"><li value="index"> <a class="index-page" href="/">ZUITOP</a></li><li value="about"> <a href="about.html">關於瑞志</a></li><li value="product"> <a href="product.html">產品介紹</a></li><li value="coop"> <a href="coop.html">合作夥伴</a></li><li value="contact"> <a href="contact.html">聯絡我們</a></li></ul></div><script>$(document).ready(function () {
     //- document.addEventListener("contextmenu", function(e){
     //-     e.preventDefault();
     //- }, false);
     var currentMenu = '';
     var url = location.pathname;
     var anchor = window.top.location.hash
-    console.log(url)
+    //- console.log(url)
+    $('.triangle').click(function () {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    })
+    $(".owl-carousel").owlCarousel(
+        {
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000
+        }
+    );
     switch (url) {
         case '/about.html':
             $("li[value='about']").addClass('active')
@@ -50,54 +64,6 @@
         default:
             $("li[value='index']").addClass('active')
             break;
-    }
-    //- $('ul.sub-03 > li > a').click(function () {
-    //-     console.log($(this)[0])
-    //-     $('.sub-03 > li > a').removeClass('active');
-    //-     $(this).addClass('active');
-        
-    //- });
-    //- $('.menu > li').click(function () {
-    //-     console.log($(this)[0].attributes[0].value)
-    //-     if(currentMenu === $(this)[0].attributes[0].value){
-    //-         $('.sub-menu > ul').hide();
-    //-         $('.menu > li').removeClass('active');
-    //-         currentMenu = '';
-    //-     }else{
-    //-         currentMenu = $(this)[0].attributes[0].value;
-    //-         console.log(currentMenu);
-    //-         switch (currentMenu) {
-    //-         case 'index':
-    //-             window.location.href = '/'
-    //-             break;
-    //-         case 'about':
-    //-             $('.sub-menu > ul').hide();
-    //-             $('.menu > li').removeClass('active');
-    //-             $(this).addClass('active');
-    //-             $('.sub-02').toggle();
-    //-             break;
-    //-         case 'product':
-    //-             $('.sub-menu > ul').hide();
-    //-             $('.menu > li').removeClass('active');
-    //-             $(this).addClass('active');
-    //-             $('.sub-03').toggle();
-    //-             break;
-    //-         case 'coop':
-    //-             window.location.href = '/coop.html'
-    //-             $('.sub-menu > ul').hide();
-    //-             $('.menu > li').removeClass('active');
-    //-             $(this).addClass('active');
-    //-             break;
-    //-         case 'contact':
-    //-             window.location.href = '/contact.html'
-    //-             $('.sub-menu > ul').hide();
-    //-             $('.menu > li').removeClass('active');
-    //-             $(this).addClass('active');
-    //-             break;
-    //-         default:
-    //-             break;
-    //-         }
-    //-     }}
-        //- )
+            }
         }
     );</script><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02"><li><a class="active">聯絡我們</a></li></ul></div><div class="main contact"><div class="column-left"><span>聯絡 / 諮詢</span><form><input type="text" placeholder="名稱 / 公司"><input type="text" placeholder="主旨"><input type="text" placeholder="電子信箱"><textarea type="text" placeholder="訊息"></textarea><button class="btn btn-primary">送出</button></form></div><div class="column-right"><div class="item"><img src="./assets/img/location.svg" alt="location"><p>瑞志實業有限公司<br>台灣 台北</p></div><div class="item"><img src="./assets/img/phone.svg" alt="phone"><p>+886<br>02 87730128</p></div><div class="item"><img src="./assets/img/email.svg" alt="email"><p>zuitop_client@<br>zuitop.com</p></div></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
