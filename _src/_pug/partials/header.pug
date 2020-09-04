@@ -40,9 +40,9 @@
         //-             a.special-chemicals(href="/product.html#special-chemicals")|特用化學品
 script.
     $(document).ready(function () {
-        //- document.addEventListener("contextmenu", function(e){
-        //-     e.preventDefault();
-        //- }, false);
+        document.addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        }, false);
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
