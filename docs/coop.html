@@ -20,50 +20,17 @@
             autoplayTimeout: 5000
         }
     );
-    switch (url) {
-        case '/about.html':
-            $("li[value='about']").addClass('active')
-            //- $('.sub-02').toggle();
-            //- $("a[href='/about.html']").addClass('active')
-            break;
-        case '/developing.html':
-            $("li[value='about']").addClass('active')
-            //- $('.sub-02').toggle();
-            //- $("a[href='/developing.html']").addClass('active')
-            break;
-        case '/product.html':
-            $("li[value='product']").addClass('active')
-            //- $('.sub-03').toggle();
-            //- switch(anchor){
-            //-     case '#olefin':
-            //-         console.log('#olefin')
-            //-         $("a[href='/product.html#olefin']").addClass('active')
-            //-         break;
-            //-     case '#monomers':
-            //-         $("a[href='/product.html#monomers']").addClass('active')
-            //-         break;
-            //-     case '#chlor':
-            //-         $("a[href='/product.html#chlor']").addClass('active')
-            //-         break;
-            //-     case '#plastic':
-            //-         $("a[href='/product.html#plastic']").addClass('active')
-            //-         break;
-            //-     case '#special-chemicals':
-            //-         $("a[href='/product.html#special-chemicals']").addClass('active')
-            //-         break;
-            //-     default:
-            //-     break;
-            //- }
-            break;
-        case '/coop.html':
-            $("li[value='coop']").addClass('active')
-            break;
-        case '/contact.html':
-            $("li[value='contact']").addClass('active')
-            break;
-        default:
-            $("li[value='index']").addClass('active')
-            break;
-            }
-        }
+    if(url.indexOf('/about.html')>0:){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/developing.html')>0){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/product.html')>0){
+        $("li[value='product']").addClass('active')
+    }else if(url.indexOf('/coop.html')>0){
+        $("li[value='coop']").addClass('active')
+    }else if(url.indexOf('/contact.html')>0){
+        $("li[value='contact']").addClass('active')
+    }else if(url.indexOf('zuitop')>0){
+        $("li[value='index']").addClass('active')
+    }
     );</script><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02"><li><a class="active">合作夥伴</a></li></ul></div><div class="main coop"><span>海外合作</span><h2> ZUITOP TRADING CO.,LTD  為國內外知名石化廠指定之專業代理商，於上海、 香港、越南，皆有緊密合作之企業夥伴，攜手建立亞太地區貿易經絡網。</h2><h2>除致力於石化上、中、下游產品的國際貿易，ZUITOP TRADING CO.,LTD 同時提供靈活多變的交易模式及增值服務，全力為眾多客戶與合作夥伴創造更多價值和利潤。</h2><div class="sub-head"><p> 台灣</p><p>台北</p><div class="sub">Taipei, Taiwan</div></div><div class="sub-content">瑞志實業有限公司 ZUITOP TRADING CO.,LTD <br>106 台北市大安區安和路一段 29 號 13 樓<br>Tel - +886 02 87730128 | Fax - +886 02 87730128<br>Email - <a class="coop-link" href="contact.html">zuitop_client@zuitop.com</a></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>

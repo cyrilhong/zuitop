@@ -61,51 +61,18 @@ script.
                 autoplayTimeout: 5000
             }
         );
-        switch (url) {
-            case '/about.html':
-                $("li[value='about']").addClass('active')
-                //- $('.sub-02').toggle();
-                //- $("a[href='/about.html']").addClass('active')
-                break;
-            case '/developing.html':
-                $("li[value='about']").addClass('active')
-                //- $('.sub-02').toggle();
-                //- $("a[href='/developing.html']").addClass('active')
-                break;
-            case '/product.html':
-                $("li[value='product']").addClass('active')
-                //- $('.sub-03').toggle();
-                //- switch(anchor){
-                //-     case '#olefin':
-                //-         console.log('#olefin')
-                //-         $("a[href='/product.html#olefin']").addClass('active')
-                //-         break;
-                //-     case '#monomers':
-                //-         $("a[href='/product.html#monomers']").addClass('active')
-                //-         break;
-                //-     case '#chlor':
-                //-         $("a[href='/product.html#chlor']").addClass('active')
-                //-         break;
-                //-     case '#plastic':
-                //-         $("a[href='/product.html#plastic']").addClass('active')
-                //-         break;
-                //-     case '#special-chemicals':
-                //-         $("a[href='/product.html#special-chemicals']").addClass('active')
-                //-         break;
-                //-     default:
-                //-     break;
-                //- }
-                break;
-            case '/coop.html':
-                $("li[value='coop']").addClass('active')
-                break;
-            case '/contact.html':
-                $("li[value='contact']").addClass('active')
-                break;
-            default:
-                $("li[value='index']").addClass('active')
-                break;
-                }
-            }
+        if(url.indexOf('/about.html')>0:){
+            $("li[value='about']").addClass('active')
+        }else if(url.indexOf('/developing.html')>0){
+            $("li[value='about']").addClass('active')
+        }else if(url.indexOf('/product.html')>0){
+            $("li[value='product']").addClass('active')
+        }else if(url.indexOf('/coop.html')>0){
+            $("li[value='coop']").addClass('active')
+        }else if(url.indexOf('/contact.html')>0){
+            $("li[value='contact']").addClass('active')
+        }else if(url.indexOf('zuitop')>0){
+            $("li[value='index']").addClass('active')
+        }
         );
 

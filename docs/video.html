@@ -20,50 +20,17 @@
             autoplayTimeout: 5000
         }
     );
-    switch (url) {
-        case '/about.html':
-            $("li[value='about']").addClass('active')
-            //- $('.sub-02').toggle();
-            //- $("a[href='/about.html']").addClass('active')
-            break;
-        case '/developing.html':
-            $("li[value='about']").addClass('active')
-            //- $('.sub-02').toggle();
-            //- $("a[href='/developing.html']").addClass('active')
-            break;
-        case '/product.html':
-            $("li[value='product']").addClass('active')
-            //- $('.sub-03').toggle();
-            //- switch(anchor){
-            //-     case '#olefin':
-            //-         console.log('#olefin')
-            //-         $("a[href='/product.html#olefin']").addClass('active')
-            //-         break;
-            //-     case '#monomers':
-            //-         $("a[href='/product.html#monomers']").addClass('active')
-            //-         break;
-            //-     case '#chlor':
-            //-         $("a[href='/product.html#chlor']").addClass('active')
-            //-         break;
-            //-     case '#plastic':
-            //-         $("a[href='/product.html#plastic']").addClass('active')
-            //-         break;
-            //-     case '#special-chemicals':
-            //-         $("a[href='/product.html#special-chemicals']").addClass('active')
-            //-         break;
-            //-     default:
-            //-     break;
-            //- }
-            break;
-        case '/coop.html':
-            $("li[value='coop']").addClass('active')
-            break;
-        case '/contact.html':
-            $("li[value='contact']").addClass('active')
-            break;
-        default:
-            $("li[value='index']").addClass('active')
-            break;
-            }
-        }
+    if(url.indexOf('/about.html')>0:){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/developing.html')>0){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/product.html')>0){
+        $("li[value='product']").addClass('active')
+    }else if(url.indexOf('/coop.html')>0){
+        $("li[value='coop']").addClass('active')
+    }else if(url.indexOf('/contact.html')>0){
+        $("li[value='contact']").addClass('active')
+    }else if(url.indexOf('zuitop')>0){
+        $("li[value='index']").addClass('active')
+    }
     );</script><div class="index"><div class="owl-carousel"><div class="d-flex"><video autoplay><source src="./assets/video/001.mp4" type="video/mp4"></video></div></div><div class="index-wrapper"><div class="bg"></div><div class="container"><div class="col-12"><div class="row"><div class="col-4"><a href="product.html"><img src="./assets/img/icon-01.svg" alt="main products"><h1>MAIN PRODUCTS</h1></a></div><div class="col-4"><a href="about.html"><img src="./assets/img/icon-02.svg" alt="our services"><h1> OUR<br>SERVICES</h1></a></div><div class="col-4"><a href="contact.html"><img src="./assets/img/icon-03.svg" alt="contacts zuitop"><h1>CONTACTS ZUITOP</h1></a></div></div></div></div></div></div><div class="container"><div class="col-12"><div class="index-contact"><div class="bolder">ZUITOP TRADING CO.,LTD</div>        No. 29-13, Sec. 1, Anhe Rd., Da’an Dist., Taipei City 106, Taiwan<br>        TEL- +886 02 87730128 | FAX- +886 02 87730128<br>        E-MAIL- zuitop.global@zuitop.com</div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
