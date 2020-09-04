@@ -46,7 +46,7 @@ script.
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
-        //- console.log(url)
+        console.log(url)
         $('.triangle').click(function () {
             window.scrollTo({
             top: 0,
@@ -61,18 +61,20 @@ script.
                 autoplayTimeout: 5000
             }
         );
-        if(url.indexOf('/about.html')>0){
+        if(url.indexOf('/about.html')>-1){
             $("li[value='about']").addClass('active')
-        }else if(url.indexOf('/developing.html')>0){
+        }else if(url.indexOf('/developing.html')>-1){
             $("li[value='about']").addClass('active')
-        }else if(url.indexOf('/product.html')>0){
+        }else if(url.indexOf('/product.html')>-1){
             $("li[value='product']").addClass('active')
-        }else if(url.indexOf('/coop.html')>0){
+        }else if(url.indexOf('/coop.html')>-1){
             $("li[value='coop']").addClass('active')
-        }else if(url.indexOf('/contact.html')>0){
+        }else if(url.indexOf('/contact.html')>-1){
             $("li[value='contact']").addClass('active')
-        }else if(url.indexOf('zuitop')>0){
+        }else if(url.indexOf('zuitop')>-1){
             $("li[value='index']").addClass('active')
         }
-        );
+
+        }
+    );
 

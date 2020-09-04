@@ -5,7 +5,7 @@
     var currentMenu = '';
     var url = location.pathname;
     var anchor = window.top.location.hash
-    //- console.log(url)
+    console.log(url)
     $('.triangle').click(function () {
         window.scrollTo({
         top: 0,
@@ -20,17 +20,19 @@
             autoplayTimeout: 5000
         }
     );
-    if(url.indexOf('/about.html')>0){
+    if(url.indexOf('/about.html')>-1){
         $("li[value='about']").addClass('active')
-    }else if(url.indexOf('/developing.html')>0){
+    }else if(url.indexOf('/developing.html')>-1){
         $("li[value='about']").addClass('active')
-    }else if(url.indexOf('/product.html')>0){
+    }else if(url.indexOf('/product.html')>-1){
         $("li[value='product']").addClass('active')
-    }else if(url.indexOf('/coop.html')>0){
+    }else if(url.indexOf('/coop.html')>-1){
         $("li[value='coop']").addClass('active')
-    }else if(url.indexOf('/contact.html')>0){
+    }else if(url.indexOf('/contact.html')>-1){
         $("li[value='contact']").addClass('active')
-    }else if(url.indexOf('zuitop')>0){
+    }else if(url.indexOf('zuitop')>-1){
         $("li[value='index']").addClass('active')
     }
-    );</script><div class="index"><div class="owl-carousel"><div class="d-flex"><img src="./assets/img/index.jpg" alt="bg-01"></div><div class="d-flex"><img src="./assets/img/index-02.jpg" alt="bg-02"></div><div class="d-flex"><img src="./assets/img/index-03.jpg" alt="bg-03"></div></div><div class="index-wrapper"><div class="bg"></div><div class="container"><div class="col-12"><div class="row"><div class="col-4"><a href="product.html"><img src="./assets/img/icon-01.svg" alt="main products"><h1>MAIN PRODUCTS</h1></a></div><div class="col-4"><a href="about.html"><img src="./assets/img/icon-02.svg" alt="our services"><h1> OUR<br>SERVICES</h1></a></div><div class="col-4"><a href="contact.html"><img src="./assets/img/icon-03.svg" alt="contacts zuitop"><h1>CONTACTS ZUITOP</h1></a></div></div></div></div></div></div><div class="container"><div class="col-12"><div class="index-contact"><div class="bolder">ZUITOP TRADING CO.,LTD</div>        No. 29-13, Sec. 1, Anhe Rd., Da’an Dist., Taipei City 106, Taiwan<br>        TEL- +886 02 87730128 | FAX- +886 02 87730128<br>        E-MAIL- zuitop.global@zuitop.com</div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
+
+    }
+);</script><div class="index"><div class="owl-carousel"><div class="d-flex"><img src="./assets/img/index.jpg" alt="bg-01"></div><div class="d-flex"><img src="./assets/img/index-02.jpg" alt="bg-02"></div><div class="d-flex"><img src="./assets/img/index-03.jpg" alt="bg-03"></div></div><div class="index-wrapper"><div class="bg"></div><div class="container"><div class="col-12"><div class="row"><div class="col-4"><a href="product.html"><img src="./assets/img/icon-01.svg" alt="main products"><h1>MAIN PRODUCTS</h1></a></div><div class="col-4"><a href="about.html"><img src="./assets/img/icon-02.svg" alt="our services"><h1> OUR<br>SERVICES</h1></a></div><div class="col-4"><a href="contact.html"><img src="./assets/img/icon-03.svg" alt="contacts zuitop"><h1>CONTACTS ZUITOP</h1></a></div></div></div></div></div></div><div class="container"><div class="col-12"><div class="index-contact"><div class="bolder">ZUITOP TRADING CO.,LTD</div>        No. 29-13, Sec. 1, Anhe Rd., Da’an Dist., Taipei City 106, Taiwan<br>        TEL- +886 02 87730128 | FAX- +886 02 87730128<br>        E-MAIL- zuitop.global@zuitop.com</div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>

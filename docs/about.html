@@ -5,7 +5,7 @@
     var currentMenu = '';
     var url = location.pathname;
     var anchor = window.top.location.hash
-    //- console.log(url)
+    console.log(url)
     $('.triangle').click(function () {
         window.scrollTo({
         top: 0,
@@ -20,17 +20,19 @@
             autoplayTimeout: 5000
         }
     );
-    if(url.indexOf('/about.html')>0){
+    if(url.indexOf('/about.html')>-1){
         $("li[value='about']").addClass('active')
-    }else if(url.indexOf('/developing.html')>0){
+    }else if(url.indexOf('/developing.html')>-1){
         $("li[value='about']").addClass('active')
-    }else if(url.indexOf('/product.html')>0){
+    }else if(url.indexOf('/product.html')>-1){
         $("li[value='product']").addClass('active')
-    }else if(url.indexOf('/coop.html')>0){
+    }else if(url.indexOf('/coop.html')>-1){
         $("li[value='coop']").addClass('active')
-    }else if(url.indexOf('/contact.html')>0){
+    }else if(url.indexOf('/contact.html')>-1){
         $("li[value='contact']").addClass('active')
-    }else if(url.indexOf('zuitop')>0){
+    }else if(url.indexOf('zuitop')>-1){
         $("li[value='index']").addClass('active')
     }
-    );</script><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02" style="display: block;"><li><a class="active" href="about.html">瑞志實業</a></li><li><a href="developing.html">多元發展</a></li></ul></div><div class="main about"><span>瑞智實業精神</span><h1> 創新突破穩定品質<br>落實管理提高效率</h1><p> 瑞志公司於西元 1973 年創立，實為國內外知名石化廠指定之專業代理商。<br>專營工業化學品、溶劑、塑膠原料、油品等經銷貿易與業務。<br>四十多年來秉持以誠為本，以人為根之企業精神，伴隨公司營運一同節節攀升。<br>瑞志集團以台灣總公司作為營運中心；並致力於多角化經營，在上海，香港，越南，韓國，新加坡，印尼，馬來西亞，中東波斯灣地區等多處建立經銷網路，服務客戶及供應商，攜手深耕中東及亞太地區業務。</p></div></div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
+
+    }
+);</script><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02" style="display: block;"><li><a class="active" href="about.html">瑞志實業</a></li><li><a href="developing.html">多元發展</a></li></ul></div><div class="main about"><span>瑞智實業精神</span><h1> 創新突破穩定品質<br>落實管理提高效率</h1><p> 瑞志公司於西元 1973 年創立，實為國內外知名石化廠指定之專業代理商。<br>專營工業化學品、溶劑、塑膠原料、油品等經銷貿易與業務。<br>四十多年來秉持以誠為本，以人為根之企業精神，伴隨公司營運一同節節攀升。<br>瑞志集團以台灣總公司作為營運中心；並致力於多角化經營，在上海，香港，越南，韓國，新加坡，印尼，馬來西亞，中東波斯灣地區等多處建立經銷網路，服務客戶及供應商，攜手深耕中東及亞太地區業務。</p></div></div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 Zuitop Trading Co.,Ltd. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div><!--END out--><!--LOAD SCRIPTS--></main></body></html>
