@@ -49,6 +49,10 @@ body
         a
             font-weight: 400
             color: rgba(0,0,0,.6)
+            transition: all .5s ease-in
+            border-bottom: 5px solid transparent
+            &:hover
+                border-bottom: 5px solid $red
         .index-page
             font-weight: 500
     .active
@@ -87,9 +91,36 @@ body
         li
             a
                 color: rgba(0,0,0,.6)
+                transition: all .5s ease-in
+                border-bottom: 2px solid transparent
+                &:hover
+                    border-bottom: 2px solid $red
                 &.active
                     color: #000
+                    border-bottom: 2px solid $red
+.container-wrapper
+    display: inline-block
+    width: 100%
 
+.navbar
+    position: fixed
+    width: 100%
+    z-index: 1
+    left: 0
+    background-color: #fff
+    box-shadow: 5px 5px 15px rgba(0,0,0,.25)
+    margin-bottom: 32px
+    .navbar-collapse
+        display: flex
+        flex-direction: column
+        width: 100%
+        li
+            width: 100%
+        .nav-link
+            text-align: center
+    .navbar-toggler
+        float: right
+        margin-top: 12px
 .main
     min-height: 510px
     background-size: cover
@@ -114,7 +145,7 @@ body
         color: #fff
         font-weight: 400
         margin-top: 24px
-    p 
+    p
         font-size: 20px
         color: #fff
         line-height: 30px
@@ -164,7 +195,7 @@ body
             button
                 background-color: red
                 color: #fff
-                padding: 4px 8px 
+                padding: 4px 8px
                 font-size: 14px
                 border-radius: 0
                 margin-top: 20px
@@ -235,8 +266,11 @@ body
             a
                 display: inline-flex
                 align-items: center
+                &:hover
+                    img
+                        // zoom: 1.1
                 img
-                    // width: 90px
+                    transition: all .5s ease-in
                     margin-right: 20px
                 img[alt="main products"]
                     width: 82px
@@ -245,7 +279,7 @@ body
                 img[alt="contacts zuitop"]
                     width: 76px
                 h1
-                    color: #fff   
+                    color: #fff
                     font-size: 30px
 .index-contact
     margin: 40px 0
@@ -299,6 +333,11 @@ body
             margin: 0 0 20px 0
             line-height: 1.75
             min-height: 52px
+            cursor: pointer
+            transition: all .5s ease-in
+            &:hover
+                p,small
+                    text-shadow: 1px 1px 1px rgba(0,0,0, .2)
             p
                 margin-bottom: -6px
                 font-size: 16px

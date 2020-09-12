@@ -23,7 +23,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.0",
     "bourbon": "^7.0.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "caniuse-lite": "^1.0.30001079",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",

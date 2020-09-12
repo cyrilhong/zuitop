@@ -1,5 +1,5 @@
 .container
-    .header
+    .header.d-none.d-md-block
         .logo
             a(href='/zuitop')
                 img(src="./assets/img/zuitop-logo.svg" alt="logo")
@@ -10,7 +10,7 @@
             | 簡 / 
             a(href="#")
             | EN 
-    ul.menu
+    ul.menu.d-none.d-md-block
         li(value="index") 
             a.index-page(href='/zuitop') ZUITOP
         li(value="about") 
@@ -21,28 +21,31 @@
             a(href='coop.html') 合作夥伴
         li(value="contact") 
             a(href='contact.html') 聯絡我們
-        //- .sub-menu
-        //-     ul.sub-02
-        //-         li
-        //-             a(href="/about.html")|瑞志實業
-        //-         li
-        //-             a(href="/developing.html")|多元發展
-        //-     ul.sub-03
-        //-         li
-        //-             a.olefin(href="/product.html#olefin")|石化原料
-        //-         li 
-        //-             a.monomers(href="/product.html#monomers")|單體
-        //-         li 
-        //-             a.chlor(href="/product.html#chlor")|Chlor / Alkali
-        //-         li 
-        //-             a.plastic(href="/product.html#plastic")|塑膠品
-        //-         li
-        //-             a.special-chemicals(href="/product.html#special-chemicals")|特用化學品
+    .row
+        nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
+            a.navbar-brand(href='/zuitop')
+                img(src="./assets/img/zuitop-logo.svg" alt="logo")
+            button.navbar-toggler.toggler-example(type='button' data-toggle='collapse' data-target='#navbarSupportedContent1' aria-controls='navbarSupportedContent1' aria-expanded='false' aria-label='Toggle navigation')
+                span.dark-blue-text
+                i.fas.fa-bars.fa-1x
+            #navbarSupportedContent1.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                li.nav-item.active(value="index")
+                    a.nav-link(href='#') ZUITOP
+                li.nav-item(value="about")
+                    a.nav-link(href='about.html') 關於瑞志
+                li.nav-item(value="product")
+                    a.nav-link(href='product.html') 產品介紹
+                li.nav-item(value="coop")
+                    a.nav-link(href='coop.html') 合作夥伴
+                li.nav-item(value="contact")
+                    a.nav-link(href='contact.html') 聯絡我們
+
 script.
     $(document).ready(function () {
-        document.addEventListener("contextmenu", function(e){
-            e.preventDefault();
-        }, false);
+        //- document.addEventListener("contextmenu", function(e){
+        //-     e.preventDefault();
+        //- }, false);
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
