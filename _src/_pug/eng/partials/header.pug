@@ -2,27 +2,27 @@
     .header.d-none.d-md-block
         .logo
             a(href='/zuitop')
-                img(src="./assets/img/zuitop-logo.svg" alt="logo")
+                img(src="./../assets/img/zuitop-logo.svg" alt="logo")
         .language
-            a.active(href="#") 繁
+            a(href="#") 繁
             span /
             a(href="#") 簡
             span /
-            a(href="#") EN
+            a.active(href="#") EN
     ul.menu.d-none.d-md-block
-        li(value="index") 
+        li(value="index")
             a.index-page(href='/zuitop') ZUITOP
-        li(value="about") 
-            a(href='about.html') 關於瑞志
-        li(value="product") 
-            a(href='product.html') 產品介紹
-        li(value="coop") 
-            a(href='coop.html') 合作夥伴
-        li(value="contact") 
-            a(href='contact.html') 聯絡我們
+        li(value="about")
+            a(href='about.html') ABOUT
+        li(value="product")
+            a(href='product.html') PRODUCT
+        li(value="coop")
+            a(href='coop.html') PARTNERSHIP
+        li(value="contact")
+            a(href='contact.html') CONTACT
 nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
     a.navbar-brand(href='/zuitop')
-        img(src="./assets/img/zuitop-logo.svg" alt="logo")
+        img(src="./../assets/img/zuitop-logo.svg" alt="logo")
     button.navbar-toggler.toggler-example(type='button' data-toggle='collapse' data-target='#navbarSupportedContent1' aria-controls='navbarSupportedContent1' aria-expanded='false' aria-label='Toggle navigation')
         span.dark-blue-text
         i.fas.fa-bars.fa-1x
@@ -31,13 +31,13 @@ nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
         li.nav-item.active(value="index")
             a.nav-link(href='#') ZUITOP
         li.nav-item(value="about")
-            a.nav-link(href='about.html') 關於瑞志
+            a.nav-link(href='about.html') ABOUT
         li.nav-item(value="product")
-            a.nav-link(href='product.html') 產品介紹
+            a.nav-link(href='product.html') PRODUCT
         li.nav-item(value="coop")
-            a.nav-link(href='coop.html') 合作夥伴
+            a.nav-link(href='coop.html') PARTNERSHIP
         li.nav-item(value="contact")
-            a.nav-link(href='contact.html') 聯絡我們
+            a.nav-link(href='contact.html') CONTACT
 
 script.
     $(document).ready(function () {
