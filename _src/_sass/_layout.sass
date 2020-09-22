@@ -37,7 +37,7 @@ body
     margin-bottom: 30px
     font-size: 20px
     list-style: none
-    padding: 0
+    padding: 0 0 32px
 
     li
         display: inline-block
@@ -101,26 +101,28 @@ body
 .container-wrapper
     display: inline-block
     width: 100%
-
 .navbar
-    position: fixed
+    position: fixed!important
     width: 100%
     z-index: 1
     left: 0
     background-color: #fff
     box-shadow: 5px 5px 15px rgba(0,0,0,.25)
-    margin-bottom: 32px
+    margin-bottom: 0
     .navbar-collapse
         display: flex
         flex-direction: column
         width: 100%
         li
             width: 100%
+            padding: 0
+            margin: 8px
+            border: 1px solid #dcdcdc
         .nav-link
             text-align: center
     .navbar-toggler
         float: right
-        margin-top: 12px
+        margin-top: 6px
 .main
     min-height: 510px
     background-size: cover
@@ -192,8 +194,9 @@ body
                 width: 100%
                 height: 210px
                 font-weight: 300
-            button
+            .btn
                 background-color: red
+                width: auto
                 color: #fff
                 padding: 4px 8px
                 font-size: 14px
@@ -261,7 +264,7 @@ body
             height: 170px
             margin-top: -30px
             position: absolute
-        .col-4
+        .col-md-4
             display: inline-flex
             a
                 display: inline-flex
@@ -392,3 +395,53 @@ body
         border-color: transparent transparent #fff transparent
         display: inline-block
         float: right
+
+@media (max-width: 960px)
+    .index .index-wrapper .col-md-4 a
+        h1
+            font-size: 24px
+@media (max-width: 768px)
+    .main
+        padding: 15px
+        // margin: 0
+    .container
+        max-width: initial!important
+    .container-wrapper
+        margin-top: 96px
+    .index
+        margin-top: -40px
+        .index-wrapper
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 0
+            height: 100%
+            a
+                margin-bottom: 32px
+            .col-sm-12
+                img[alt="main products"]
+                    margin-right: 38px
+                img[alt="contacts zuitop"]
+                    margin-right: 44px
+                &:nth-last-child(1)
+                    a
+                        margin-bottom: 0
+            .bg
+                height: 510px
+                width: 100%
+                margin: 0
+    .developing
+        min-width: auto
+    .contact
+        padding: 0
+        .column-left
+            width: 100%
+            form
+                padding: 16px 0
+        .column-right
+            width: 100%
+    .footer
+        position: fixed
+        bottom: 0
+        width: 100%
