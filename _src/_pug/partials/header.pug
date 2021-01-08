@@ -49,10 +49,11 @@ script.
         var anchor = window.top.location.hash
         console.log(url)
         $('.triangle').click(function () {
-            window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-            });
+            //- window.scrollTo({
+            //- top: 0,
+            //- behavior: 'smooth'
+            //- });
+            $('html, body').animate({scrollTop:0},'100');
         })
         $(".owl-carousel").owlCarousel(
             {
