@@ -2,7 +2,7 @@
     .header.d-none.d-md-block
         .logo
             a(href='/zuitop')
-                img(src="./assets/img/logo.png" alt="logo")
+                img(src="./assets/img/zuitop-logo.svg" alt="logo")
         .language
             a.active(href="#") 繁
             span /
@@ -60,7 +60,9 @@ script.
                 items: 1,
                 loop: true,
                 autoplay: true,
-                autoplayTimeout: 5000
+                animateOut: 'fadeOut',
+                autoplayTimeout: 5000,
+                autoplaySpeed: 800
             }
         );
         if(url.indexOf('/about.html')>-1){

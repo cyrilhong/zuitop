@@ -134,6 +134,7 @@ body
 .main
     min-height: 510px
     background-size: cover
+    width: 100%
     background-position: center bottom
     padding: 40px
     margin-bottom: 90px
@@ -181,6 +182,7 @@ body
     p
         margin-top: 130px
         font-size: 15px
+        max-width: 784px
     h1
         line-height: 1.5
         letter-spacing: 4px
@@ -192,6 +194,17 @@ body
 .contact
     background-image: url("./assets/img/bg-06.jpg")
     background-position: top
+    padding: 40px 56px
+    position: relative
+    &::after
+        content: ''
+        background: rgb(255,255,255)
+        background: linear-gradient(13deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%)
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
     .column-left
         display: inline-block
         width: 75%
@@ -208,7 +221,8 @@ body
                 height: 210px
                 font-weight: 300
             .btn
-                background-color: red
+                background: rgb(162,0,0)
+                background: linear-gradient(90deg, rgba(162,0,0,1) 0%, rgba(228,0,18,1) 100%)
                 width: auto
                 color: #fff
                 padding: 4px 8px
@@ -220,12 +234,15 @@ body
                 font-weight: 300
     .column-right
         display: inline-block
+        position: relative
+        z-index: 11
         width: 25%
         vertical-align: top
         margin-top: 60px
         .item
             display: flex
             margin-bottom: 20px
+            cursor: pointer
             img
                 width: 50px
                 height: 50px
@@ -310,13 +327,26 @@ body
     min-width: 730px
     .title
         margin-top: 70px
-        font-size: 20px
+        font-size: 16px
+        margin-bottom: 10px
+    .sub-content
+        p
+            margin-bottom: 10px
     h2
         letter-spacing: 4px
-        line-height: 1.5
-        font-size: 19px
+        line-height: 1.75
+        font-size: 15px
     p.sub
         font-size: 15px
+        max-width: 770px
+        line-height: 1.75
+        font-weight: 300
+    ol
+        margin-bottom: 0
+        li
+            font-size: 15px
+            line-height: 1.75
+            font-weight: 300
     @media screen and ( max-width: 768px )
         &.main
             margin-bottom: 0
@@ -331,6 +361,16 @@ body
 .product
     background-image: url("./assets/img/bg-04.jpg")
     color: #000
+    position: relative
+    &::after
+        content: ''
+        background: rgb(255,255,255)
+        background: linear-gradient(13deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%)
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
     span
         background: none
     h1
@@ -338,43 +378,43 @@ body
     p
         color: inherit
     .wrapper
+        margin-top: -90px
         p
             padding-top: 90px
+            font-size: 16px
             span
-                background-color: none
                 padding: 0
-                font-size: 20px
                 font-weight: 800
                 color: #000
-    ul
-        display: inline-block
-        flex-direction: column
-        padding-inline-start: 0
-        margin-bottom: 0
-        list-style-type: none
-        width: 100%
-        li
-            width: 33.33%
+        ul
             display: inline-block
-            border: 0
-            display: list-item
-            padding: 0 20px 0 0
-            margin: 0 0 20px 0
-            line-height: 1.75
-            min-height: 52px
-            cursor: pointer
-            transition: all .5s ease-in
-            &:hover
-                p,small
-                    text-shadow: 1px 1px 1px rgba(0,0,0, .2)
-            p
-                margin-bottom: -6px
-                font-size: 15px
-                font-weight: 300
-                padding-top: 0!important
-            small
-                font-size: 13px
-                font-weight: 300
+            flex-direction: column
+            padding-inline-start: 0
+            margin-bottom: 0
+            list-style-type: none
+            width: 100%
+            li
+                width: 33.33%
+                display: inline-block
+                border: 0
+                display: list-item
+                padding: 0 20px 0 0
+                margin: 0 0 20px 0
+                line-height: 1.75
+                min-height: 52px
+                cursor: pointer
+                transition: all .5s ease-in
+                &:hover
+                    p,small
+                        text-shadow: 1px 1px 1px rgba(0,0,0, .2)
+                p
+                    margin-bottom: -6px
+                    font-size: 14px
+                    font-weight: 300
+                    padding-top: 0!important
+                small
+                    font-size: 14px
+                    font-weight: 300
     .special-chemicals
         ul
             li
@@ -384,27 +424,30 @@ body
     p
         margin-top: 40px
         margin-bottom: 0
+        font-size: 14px
     .sub-content
-        font-size: 15px
+        font-size: 14px
         color: #fff
         line-height: 26px
         font-weight: 300
         letter-spacing: 2px
     .sub-head
+        margin-top: 100px
         p
             display: inline-block
-            font-size: 20px
+            font-size: 14px
             margin-right: 12px
         .sub
-            font-size: 18px
+            font-size: 14px
             display: inline-block
             color: #fff
             font-weight: 300
     h2
         letter-spacing: 4px
         line-height: 1.5
-        font-size: 19px
+        font-size: 14px
         font-weight: 400
+        max-width: 776px
     .coop-link
         color: #fff
     @media screen and ( max-width: 960px )
@@ -418,6 +461,8 @@ body
     font-size: 9px
     padding: 16px 0
     font-weight: 300
+    .container
+        position: relative
     .col-12
         padding-right: 30px
     .triangle
@@ -425,12 +470,12 @@ body
         height: 0
         cursor: pointer
         border-style: solid
-        border-width: 0 10px 12px 10px
+        border-width: 0 6px 8px 6px
         border-color: transparent transparent #fff transparent
         display: inline-block
         position: absolute
         right: 15px
-        top: 20px
+        top: 5px
 
 @media screen and ( max-width: 960px )
     .index .index-wrapper .col-md-4 a
