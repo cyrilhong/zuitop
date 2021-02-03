@@ -76,6 +76,8 @@ body
 .sub-menu
     display: inline-block
     padding: 0
+    z-index: 11
+    position: relative
 
     ul
         margin: 0
@@ -112,7 +114,7 @@ body
 .navbar
     position: fixed!important
     width: 100%
-    z-index: 1
+    z-index: 21
     left: 0
     background-color: #fff
     box-shadow: 5px 5px 15px rgba(0,0,0,.25)
@@ -323,6 +325,10 @@ body
         font-weight: 600
         font-size: 16px
         color: #000
+    @media screen and ( max-width: 960px )
+        max-width: 308px
+        .bolder
+            font-size: 12px
 .developing
     background-image: url("./assets/img/bg-03-2.jpg")
     min-width: 730px
@@ -422,6 +428,9 @@ body
         ul
             li
                 width: 33.33%
+    @media screen and ( max-width: 960px )
+        .wrapper p
+            font-size: 15px
 .coop
     background-image: url("./assets/img/bg-5.jpg")
     p
@@ -464,6 +473,7 @@ body
     font-size: 9px
     padding: 16px 0
     font-weight: 300
+    z-index: 21
     .container
         position: relative
     .col-12
@@ -516,7 +526,7 @@ body
             padding: 0
             height: 100%
             a
-                margin-bottom: 32px
+                margin-bottom: 52px
             .col-sm-12.col-md-4
                 h1
                     font-size: 32px
@@ -553,9 +563,11 @@ body
             .item
                 display: flex
                 align-items: center
-                p
+                p,a
                     margin: 0
                     line-break: anywhere
+                    width: 100%
+                    font-weight: 300
                 br
                     display: none
     .footer
