@@ -36,9 +36,9 @@ body
         transition: all .5s ease-in
         padding: 0 6px
         &:hover
-            border-bottom: 5px solid $red
+            border-bottom: 2px solid $red
         &.active
-            border-bottom: 5px solid $red
+            border-bottom: 2px solid $red
 .menu
     display: inline-block
     margin-top: 40px
@@ -104,7 +104,8 @@ body
                 transition: all .5s ease-in
                 border-bottom: 2px solid transparent
                 &:hover
-                    border-bottom: 2px solid $red
+                    border-bottom: 2px solid #000
+                    text-shadow: 1px 1px 1px rgba(0,0,0,.1)
                 &.active
                     color: #000
                     border-bottom: 2px solid $red
@@ -133,6 +134,13 @@ body
     .navbar-toggler
         float: right
         margin-top: 6px
+    @media screen and ( max-width: 960px )
+        .navbar-brand
+            img
+                height: 24px
+                min-height: 24px
+                object-fit: contain
+                width: initial
 .main
     min-height: 510px
     background-size: cover
@@ -328,6 +336,9 @@ body
         color: #000
     @media screen and ( max-width: 960px )
         max-width: 308px
+        margin: 20px 0
+        .addr
+            max-width: 250px
         .bolder
             font-size: 12px
 .developing
@@ -359,7 +370,7 @@ body
     @media screen and ( max-width: 768px )
         &.main
             margin-bottom: 0
-            padding-bottom: 0
+            padding-bottom: 68px
             br
                 display: none
             h2
@@ -415,23 +426,32 @@ body
                 cursor: pointer
                 transition: all .5s ease-in
                 &:hover
-                    p,small
+                    p,.small
                         text-shadow: 1px 1px 1px rgba(0,0,0, .2)
                 p
                     margin-bottom: -6px
                     font-size: 14px
                     font-weight: 300
                     padding-top: 0!important
-                small
+                .small
                     font-size: 14px
                     font-weight: 300
+                    line-height: 1.2
+                    margin-top: 4px;
     .special-chemicals
         ul
             li
                 width: 33.33%
     @media screen and ( max-width: 960px )
-        .wrapper p
-            font-size: 15px
+        .wrapper
+            ul
+                display: flex
+                flex-wrap: wrap
+                flex-direction: row
+                li
+                    width: 33.33%
+            p
+                font-size: 15px
 .coop
     background-image: url("./assets/img/bg-5.jpg")
     p
@@ -492,6 +512,11 @@ body
         top: 5px
 
 @media screen and ( max-width: 960px )
+    .main
+        height: calc( 100vh - 210px )
+        min-height: auto
+        overflow: scroll
+        padding-bottom: 68px
     .index .index-wrapper .col-md-4 a
         h1
             font-size: 24px
@@ -516,7 +541,7 @@ body
         max-width: initial!important
     .container-wrapper
         margin-top: 96px
-        padding-bottom: 68px
+        // padding-bottom: 68px
     .index
         margin-top: -40px
         .index-wrapper
