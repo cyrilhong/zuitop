@@ -18,7 +18,7 @@
     "HTML",
     "Browsersync"
   ],
-  "author": "Kobrix",
+  "author": "Cyril",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.8.0",
