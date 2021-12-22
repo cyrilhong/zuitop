@@ -1,14 +1,14 @@
 .container
     .header.d-none.d-md-block
         .logo
-            a(href='/eng')
+            a(href='/cn')
                 img(src="./../assets/img/zuitop.svg" alt="logo")
         .language
-            a(href="../") 繁
+            .zh 繁
             span /
-            a.active(href="./") 简
+            .cn.active 简
             span /
-            a(href="../eng") EN
+            .eng ENG
     ul.menu.d-none.d-md-block
         li(value="index") 
             a.index-page(href='./') ZUITOP
@@ -21,17 +21,17 @@
         li(value="contact") 
             a(href='contact.html') 联络我们
 nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
-    a.navbar-brand(href='/')
+    a.navbar-brand(href='/cn')
         img(src="../assets/img/zuitop.svg" alt="logo")
     button.navbar-toggler.toggler-example(type='button' data-toggle='collapse' data-target='#navbarSupportedContent1' aria-controls='navbarSupportedContent1' aria-expanded='false' aria-label='Toggle navigation')
         span.dark-blue-text
         i.fas.fa-bars.fa-1x
     .language.mt-2.mr-2
-        a(href="../") 繁
+        .zh 繁
         span /
-        a.active(href="./") 简
+        .cn.active 简
         span /
-        a(href="../eng") EN
+        .eng ENG
     #navbarSupportedContent1.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
         li.nav-item.active(value="index")
@@ -53,7 +53,18 @@ script.
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
-        //- console.log(url)
+        $('.language div').click(function (e) {
+            var lang = e.target.classList[0]
+            if(url.indexOf("/cn/")>=0){
+                let result = url.replace("/cn","")
+                window.location.href=`${lang!=='zh'?"/"+lang:""}${result}`
+            }else if(url.indexOf("/eng/")>=0){
+                let result = url.replace("/eng","")
+                window.location.href=`${lang!=='zh'?"/"+lang:""}${result}`
+            }else{
+                window.location.href=`${lang!=='zh'?lang:""}${url}`
+            }
+        });
         $('.triangle').click(function () {
             window.scrollTo({
             top: 0,

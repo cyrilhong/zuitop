@@ -4,11 +4,11 @@
             a(href='/')
                 img(src="./assets/img/zuitop.svg" alt="logo")
         .language
-            a.active(href="/") 繁
+            .zh.active 繁
             span /
-            a(href="./cn") 簡
+            .cn 简
             span /
-            a(href="./eng") EN
+            .eng ENG
     ul.menu.d-none.d-md-block
         li(value="index") 
             a.index-page(href='/') ZUITOP
@@ -27,11 +27,11 @@ nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
         span.dark-blue-text
         i.fas.fa-bars.fa-1x
     .language.mt-2.mr-2
-        a.active(href="./") 繁
+        .zh.active 繁
         span /
-        a(href="./cn") 簡
+        .cn 简
         span /
-        a(href="./eng") EN
+        .eng ENG
     #navbarSupportedContent1.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
         li.nav-item.active(value="index")
@@ -47,13 +47,13 @@ nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
 
 script.
     $(document).ready(function () {
-        //- document.addEventListener("contextmenu", function(e){
-        //-     e.preventDefault();
-        //- }, false);
         var currentMenu = '';
         var url = location.pathname;
         var anchor = window.top.location.hash
-        //- console.log(url)
+        $('.language div').click(function (e) {
+            var lang = e.target.classList[0]
+            window.location.href=`${lang!=='zh'?lang:""}${url}`
+        });
         $('.triangle').click(function () {
             $('html, body').animate({scrollTop:0},'100');
         })
