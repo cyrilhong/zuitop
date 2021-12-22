@@ -1,0 +1,88 @@
+.container
+    .header.d-none.d-md-block
+        .logo
+            a(href='/eng')
+                img(src="./../assets/img/zuitop.svg" alt="logo")
+        .language
+            a(href="../") 繁
+            span /
+            a.active(href="./") 简
+            span /
+            a(href="../eng") EN
+    ul.menu.d-none.d-md-block
+        li(value="index") 
+            a.index-page(href='./') ZUITOP
+        li(value="about") 
+            a(href='about.html') 关于瑞志
+        li(value="product") 
+            a(href='product.html') 产品介绍
+        li(value="coop") 
+            a(href='coop.html') 合作伙伴
+        li(value="contact") 
+            a(href='contact.html') 联络我们
+nav.navbar.navbar-light.light-blue.lighten-4.d-md-none.d-block
+    a.navbar-brand(href='/')
+        img(src="../assets/img/zuitop.svg" alt="logo")
+    button.navbar-toggler.toggler-example(type='button' data-toggle='collapse' data-target='#navbarSupportedContent1' aria-controls='navbarSupportedContent1' aria-expanded='false' aria-label='Toggle navigation')
+        span.dark-blue-text
+        i.fas.fa-bars.fa-1x
+    .language.mt-2.mr-2
+        a(href="../") 繁
+        span /
+        a.active(href="./") 简
+        span /
+        a(href="../eng") EN
+    #navbarSupportedContent1.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+        li.nav-item.active(value="index")
+            a.nav-link(href='./') ZUITOP
+        li.nav-item(value="about")
+            a.nav-link(href='about.html') 关于瑞志
+        li.nav-item(value="product")
+            a.nav-link(href='product.html') 产品介绍
+        li.nav-item(value="coop")
+            a.nav-link(href='coop.html') 合作伙伴
+        li.nav-item(value="contact")
+            a.nav-link(href='contact.html') 联络我们
+
+script.
+    $(document).ready(function () {
+        //- document.addEventListener("contextmenu", function(e){
+        //-     e.preventDefault();
+        //- }, false);
+        var currentMenu = '';
+        var url = location.pathname;
+        var anchor = window.top.location.hash
+        //- console.log(url)
+        $('.triangle').click(function () {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        })
+        $(".owl-carousel").owlCarousel(
+            {
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                animateOut: 'fadeOut'
+            }
+        );
+        if(url.indexOf('/about.html')>-1){
+            $("li[value='about']").addClass('active')
+        }else if(url.indexOf('/developing.html')>-1){
+            $("li[value='about']").addClass('active')
+        }else if(url.indexOf('/product.html')>-1){
+            $("li[value='product']").addClass('active')
+        }else if(url.indexOf('/coop.html')>-1){
+            $("li[value='coop']").addClass('active')
+        }else if(url.indexOf('/contact.html')>-1){
+            $("li[value='contact']").addClass('active')
+        }else if(url.indexOf('zuitop')>-1){
+            $("li[value='index']").addClass('active')
+        }
+
+        }
+    );
+

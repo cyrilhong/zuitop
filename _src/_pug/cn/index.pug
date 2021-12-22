@@ -1,0 +1,32 @@
+extends ./layout/layout
+block content
+    .index
+        .owl-carousel
+            .d-flex
+                img(src="../assets/img/index.jpg" alt="bg-01")
+            .d-flex
+                img(src="../assets/img/bg-03-1.jpg" alt="bg-02")
+            .d-flex
+                img(src="../assets/img/bg-03.jpg" alt="bg-03")
+        .index-wrapper
+            .bg
+            .container
+                .col-12
+                    .row
+                        .col-md-4.col-sm-12
+                            a(href="product.html")
+                                img(src="../assets/img/icon-01.svg" alt="main products")
+                                h1 MAIN PRODUCTS
+                        .col-md-4.col-sm-12
+                            a(href="about.html")
+                                img(src="../assets/img/icon-02.svg" alt="our services")
+                                h1 
+                                    | OUR
+                                    br
+                                    | SERVICES
+                        .col-md-4.col-sm-12
+                            a(href="contact.html")
+                                img(src="../assets/img/icon-03.svg" alt="contacts zuitop")
+                                h1 CONTACTS ZUITOP
+    block company-info
+        include partials/company-info

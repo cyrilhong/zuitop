@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Zuitop</title><link rel="stylesheet" href="../main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500&amp;display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"><link rel="stylesheet" href="./../main.css"><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHTXZZN');</script></head></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHTXZZN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><main><div class="container"><div class="header d-none d-md-block"><div class="logo"><a href="/eng"><img src="./../assets/img/zuitop.svg" alt="logo"></a></div><div class="language"><a href="../">繁</a><span>/</span><a href="#">簡</a><span>/</span><a class="active" href="#">EN</a></div></div><ul class="menu d-none d-md-block"><li value="index"><a class="index-page" href="/eng">ZUITOP</a></li><li value="about"><a href="about.html">ABOUT</a></li><li value="product"><a href="product.html">PRODUCT</a></li><li value="coop"><a href="coop.html">PARTNERSHIP</a></li><li value="contact"><a href="contact.html">CONTACT</a></li></ul></div><nav class="navbar navbar-light light-blue lighten-4 d-md-none d-block"><a class="navbar-brand" href="/eng"><img src="./../assets/img/zuitop.svg" alt="logo"></a><button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"></span><i class="fas fa-bars fa-1x"></i></button><div class="collapse navbar-collapse" id="navbarSupportedContent1"><ul class="navbar-nav mr-auto"></ul><li class="nav-item active" value="index"><a class="nav-link" href="#">ZUITOP</a></li><li class="nav-item" value="about"><a class="nav-link" href="about.html">ABOUT</a></li><li class="nav-item" value="product"><a class="nav-link" href="product.html">PRODUCT</a></li><li class="nav-item" value="coop"><a class="nav-link" href="coop.html">PARTNERSHIP</a></li><li class="nav-item" value="contact"><a class="nav-link" href="contact.html">CONTACT</a></li></div></nav><script>$(document).ready(function () {
+    //- document.addEventListener("contextmenu", function(e){
+    //-     e.preventDefault();
+    //- }, false);
+    var currentMenu = '';
+    var url = location.pathname;
+    var anchor = window.top.location.hash
+    //- console.log(url)
+    $('.triangle').click(function () {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    })
+    $(".owl-carousel").owlCarousel(
+        {
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            animateOut: 'fadeOut'
+        }
+    );
+    if(url.indexOf('/about.html')>-1){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/developing.html')>-1){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/product.html')>-1){
+        $("li[value='product']").addClass('active')
+    }else if(url.indexOf('/coop.html')>-1){
+        $("li[value='coop']").addClass('active')
+    }else if(url.indexOf('/contact.html')>-1){
+        $("li[value='contact']").addClass('active')
+    }else if(url.indexOf('zuitop')>-1){
+        $("li[value='index']").addClass('active')
+    }
+
+    }
+);</script><div class="container-wrapper"><div class="about-container"><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02" style="display: block;"><li><a class="active" href="about.html">ZUITOP DEVELOPMENT CORP</a></li></ul></div><div class="main about"><span>The Spirit of ZUITOP DEVELOPMENT CORP.</span><h1> Breakthrough innovation, reliable quality<br>Effective management, greater efficiency</h1><p> ZUITOP DEVELOPMENT CORP. was established in 1973 and serves as the designated professional agency for prestigeous petrochemical plants both in Taiwan and abroad. Our company specializes in dealing, distribution and sales in industrial chemicals, solvents, plastic materials and petroleum products.<br>As our business sales have soared and progressed in the past forty years, honesty and people-centricity have always been the business spirits we respect.<br>ZUITOP DEVELOPMENT CORP. settles its operational center in the headquaters in Taiwan and engages in diversification in business, establishing distribution networks and serving clients and suppliers in Shanghai, Hongkong, Vietnam, Korea, Singapore, Indonesia, Malaysia and regions around the Persian Gulf in the Middle East, with an aim to strenghten our links and services in the Middle East and the APAC region.</p></div></div></div></div></div></div><div class="footer"><div class="container"><div class="col-12">COPYRIGHT © 2020 ZUITOP DEVELOPMENT CORP. ALL RIGHTS RESERVED.<div class="triangle"></div></div></div></div></main></body></html>
