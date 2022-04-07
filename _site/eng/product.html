@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><head><meta charset="utf-8"><title>Zuitop</title><link rel="stylesheet" href="../main.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500&amp;display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"><link rel="stylesheet" href="./../main.css"><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHTXZZN');</script></head></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHTXZZN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><main><div class="container"><div class="header d-none d-md-block"><div class="logo"><a href="/eng"><img src="../assets/img/zuitop.svg" alt="logo"></a></div><div class="language"><div class="zh">繁</div><span>/</span><div class="cn">简</div><span>/</span><div class="eng active">ENG</div></div></div><ul class="menu d-none d-md-block"><li value="index"><a class="index-page" href="/eng">ZUITOP</a></li><li value="about"><a href="about.html">ABOUT</a></li><li value="product"><a href="product.html">PRODUCT</a></li><li value="coop"><a href="coop.html">PARTNERSHIP</a></li><li value="contact"><a href="contact.html">CONTACT</a></li></ul></div><nav class="navbar navbar-light light-blue lighten-4 d-md-none d-block"><a class="navbar-brand" href="/eng"><img src="../assets/img/zuitop.svg" alt="logo"></a><button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"></span><i class="fas fa-bars fa-1x"></i></button><div class="language mt-2 mr-2"><div class="zh">繁</div><span>/</span><div class="cn">简</div><span>/</span><div class="eng active">ENG</div></div><div class="collapse navbar-collapse" id="navbarSupportedContent1"><ul class="navbar-nav mr-auto"></ul><li class="nav-item active" value="index"><a class="nav-link" href="./">ZUITOP</a></li><li class="nav-item" value="about"><a class="nav-link" href="about.html">ABOUT</a></li><li class="nav-item" value="product"><a class="nav-link" href="product.html">PRODUCT</a></li><li class="nav-item" value="coop"><a class="nav-link" href="coop.html">PARTNERSHIP</a></li><li class="nav-item" value="contact"><a class="nav-link" href="contact.html">CONTACT</a></li></div></nav><script>$(document).ready(function () {
+    //- document.addEventListener("contextmenu", function(e){
+    //-     e.preventDefault();
+    //- }, false);
+    var currentMenu = '';
+    var url = location.pathname;
+    var anchor = window.top.location.hash
+    $('.language div').click(function (e) {
+        var lang = e.target.classList[0]
+        if(url.indexOf("/cn/")>=0){
+            let result = url.replace("/cn","")
+            window.location.href=`${lang!=='zh'?"/"+lang:""}${result}`
+        }else if(url.indexOf("/eng/")>=0){
+            let result = url.replace("/eng","")
+            window.location.href=`${lang!=='zh'?"/"+lang:""}${result}`
+        }else{
+            window.location.href=`${lang!=='zh'?lang:""}${url}`
+        }
+    });
+    $('.triangle').click(function () {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    })
+    $(".owl-carousel").owlCarousel(
+        {
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            animateOut: 'fadeOut'
+        }
+    );
+    if(url.indexOf('/about.html')>-1){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/developing.html')>-1){
+        $("li[value='about']").addClass('active')
+    }else if(url.indexOf('/product.html')>-1){
+        $("li[value='product']").addClass('active')
+    }else if(url.indexOf('/coop.html')>-1){
+        $("li[value='coop']").addClass('active')
+    }else if(url.indexOf('/contact.html')>-1){
+        $("li[value='contact']").addClass('active')
+    }else if(url.indexOf('zuitop')>-1){
+        $("li[value='index']").addClass('active')
+    }
+
+    }
+);</script><div class="container-wrapper"><div class="container"><div class="row"><div class="col-12"><div class="sub-menu"><ul class="sub-02"><li><a class="active olefin" href="product.html#olefin">Olefin</a></li><li><a class="monomers" href="product.html#monomers">Monomers</a></li><li> <a class="chlor" href="product.html#chlor">Chlor / Alkali</a></li><li> <a class="plastic" href="product.html#plastic">Plastic</a></li><li><a class="special-chemicals" href="product.html#special-chemicals">Specialty Chemicals</a></li></ul></div><div class="main product"><div class="wrapper"><p id="olefin">Olefin</p><ul><li><p>乙烯</p><small>Ethylene</small></li><li><p>丙烯</p><small>Propylene</small></li><li><p>丁二烯</p><small>1, 3 Butadiene</small></li><li><p>丁二烯萃餘油</p><small>Ethylene</small></li><li><p>C5 衍生物</p></li><li><p>離雙環戊二烯</p><small>DCPD</small></li><li><p>異戊二烯</p><small>Lsoprene</small></li><li><p>及間戊二烯</p><small>PIPS</small></li></ul></div><div class="wrapper"><p id="monomers">Monomers </p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>丙烯酸乙酯</p><small>(EA) (Ethyl Acrylate)</small></li><li><p>丙烯酸丁酯</p><small>(BA) (Butyl Acrylate)</small></li><li><p>丙烯酸異辛酯</p><small>(2-EHA)</small></li><li><p>丙烯腈</p><small>(AN)</small></li><li><p>乙腈</p><small>(ACN)</small></li><li><p>碳酸乙烯酯</p><small>(EC)</small></li><li><p>二乙胺</p><small>(DEA)</small></li><li><p>甲基丙烯酸</p><small>(MAA)(Methacrylic Acid)</small></li><li><p>甲基丙烯酸甲酯</p><small>(MMA)(Methyl Methacrylate)</small></li><li><p>乙二醇</p><small>(EG)(Mono-ethylene Glycol)</small></li><li><p>二乙二醇</p><small>(DEG)(Di-ethylene Glycol)</small></li><li><p>乙二醇丁醚</p><small>(BCS)</small></li><li><p>二乙二醇丁醚</p><small>(DB)</small></li><li><p>乙醇胺</p><small>(MEA)</small></li><li><p>四氫呋喃</p><small>(THF)</small></li></ul></div><div class="wrapper"><p id="chlor"> <span>Chlor / Alkali</span></p><ul><li><p>丙烯酸</p><small>(AA) (Acrylate Acid)</small></li><li><p>二氯甲烷</p><small>(MC)(Dichloromethane)</small></li><li><p>片鹼</p></li><li><p>粒鹼</p></li><li><p>二氯乙烷</p><small>EDC</small></li><li><p>環氧氯丙烷</p><small>(ECH)(Epichlorohydrin)</small></li><li><p>氯乙烯</p><small>(VCM)</small></li><li><p>偏二氯乙烯</p><small>(VCL2)</small></li></ul></div><div class="wrapper"><p id="plastic">Plastic</p><ul><li><p>PVC</p></li><li><p>PE</p></li><li><p>PP</p></li><li><p>HDPE</p></li><li><p>LDPE</p></li><li><p>LLDPE</p></li><li><p>EVA</p></li><li><p>Suspension PVC</p></li><li><p>Emulsion / Paste PVC</p></li><li><p>PVC Modifiers</p></li><li><p>DOP, DOTP</p></li><li><p>DINP, DIDP</p></li><li><p>Plasticizers</p></li></ul></div><div class="wrapper special-chemicals"><p id="special-chemicals">Specialty Chemicals</p><ul><li><p>Polymerization Initiator</p></li><li><p>Silane External Donor</p></li><li><p>Co0cataysts for Ziegler Natta Catalyst</p></li><li><p>Polymerization Inhibitor</p></li><li><p>Hydrogenation Catalyst</p></li></ul></div></div></div></div></div></div><div class="footer"><div class="container"><div class="row"><div class="col-12">COPYRIGHT © 2021 ZUITOP DEVELOPMENT CORP. ALL RIGHTS RESERVED.</div></div><div class="triangle"></div></div></div></main></body></html>
